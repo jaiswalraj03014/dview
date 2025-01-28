@@ -174,22 +174,26 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0 15px;
     }
 
     /* Logo */
     .logo {
         height: 40px;
+        display: block !important; /* Force display */
+        position: relative;
+        z-index: 1001; /* Above other elements */
     }
 
     .logo img {
         height: 100%;
         width: auto;
+        display: block !important; /* Force display */
     }
 
-    /* Hide desktop elements */
-    .desktop-menu,
-    .right-section,
-    .floating-leaf {
+    /* Hide only desktop menu items */
+    .desktop-menu ul,
+    .right-section {
         display: none !important;
     }
 
