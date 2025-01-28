@@ -7,22 +7,48 @@
     <!-- Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fa-regular.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="dashboard.css"> <!-- Link to external CSS -->
 </head>
 <body>
     <!-- Navbar Section -->
     <div class="navbar">
-        <div class="logo">
-            <img src="/dview_logo_nobg.png" alt="Logo"> <!-- Replace with your logo path -->
+        <!-- Mobile Menu Button (hamburger) -->
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <div class="menu">
+    
+        <div class="logo">
+            <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/dview_logo_nobg.png" alt="Logo">
+        </div>
+    
+        <!-- Side Navigation Menu -->
+        <div class="sidenav">
+            <div class="close-btn">&times;</div>
             <ul>
-                <!-- Showroom with Dropdown -->
-                <li>
-                    <a href="#" class="active">Showroom</a>
-                </li>
+                <li><a href="#" class="active">Showroom</a></li>
                 <li><a href="projects.html">Project</a></li>
-                <!-- Services with Dropdown -->
+                <li>
+                    <a href="#" class="dropdown-trigger">
+                        Services <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="sidenav-dropdown">
+                        <a href="#">Option 1</a>
+                        <a href="#">Option 2</a>
+                        <a href="#">Option 3</a>
+                    </div>
+                </li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </div>
+    
+        <!-- Desktop Menu -->
+        <div class="menu desktop-menu">
+            <ul>
+                <li><a href="#" class="active">Showroom</a></li>
+                <li><a href="projects.html">Project</a></li>
                 <li>
                     <a href="#" onclick="toggleDropdown(event, 'servicesDropdown', 'servicesArrow')">
                         Services <i id="servicesArrow" class="fas fa-chevron-down"></i>
@@ -32,6 +58,7 @@
                 <li><a href="contacts.html">Contact</a></li>
             </ul>
         </div>
+    </div>
         <div class="right-section">
             <!-- Email Icon -->
             <a href="mailto:dview.associates@gmail.com" class="fas fa-envelope" aria-label="Email"></a> <!-- Email Icon -->
@@ -383,6 +410,6 @@
       </div>
   </footer>
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>
