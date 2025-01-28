@@ -1692,3 +1692,125 @@ footer {
         width: 100%;
     }
 }
+
+/* Base structure fixes */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Main content wrapper */
+main {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Mobile specific fixes */
+@media screen and (max-width: 768px) {
+    /* Content sections visibility */
+    .advertisement-container,
+    .project-section,
+    .intro-section,
+    .options-section,
+    .feedback-section,
+    .creds-section,
+    footer {
+        display: block;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        margin-top: 0;
+        overflow: visible;
+    }
+
+    /* Advertisement section */
+    .advertisement-container {
+        padding: 10px;
+        margin-top: 60px; /* Space for navbar */
+        background: #fff;
+    }
+
+    /* Project section */
+    .project-section {
+        padding: 20px 10px;
+        background: #fff;
+    }
+
+    /* Intro section */
+    .intro-section {
+        padding: 20px 10px;
+        background: #fff;
+    }
+
+    /* Options section */
+    .options-section {
+        padding: 20px 10px;
+        background: #fff;
+    }
+
+    /* Feedback section */
+    .feedback-section {
+        padding: 20px 10px;
+        background: #fff;
+    }
+
+    /* Credentials section */
+    .creds-section {
+        padding: 20px 10px;
+        background: #fff;
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px 10px;
+        background: #333;
+        color: white;
+    }
+
+    /* Image responsiveness */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Text visibility */
+    h1, h2, h3, h4, h5, h6, p {
+        color: inherit;
+        opacity: 1;
+    }
+
+    /* Container visibility */
+    .container,
+    .section-container,
+    .widget-container {
+        display: block;
+        width: 100%;
+        position: relative;
+        overflow: visible;
+    }
+
+    /* Fix for any absolute positioning */
+    .floating-leaf {
+        display: none; /* Hide decorative elements on mobile */
+    }
+
+    /* Ensure proper stacking */
+    * {
+        transform: none !important; /* Reset any transforms */
+    }
+}
+
+/* Additional fixes for very small screens */
+@media screen and (max-width: 480px) {
+    .advertisement-container,
+    .project-section,
+    .intro-section,
+    .options-section,
+    .feedback-section,
+    .creds-section {
+        padding: 15px 5px;
+    }
+}
