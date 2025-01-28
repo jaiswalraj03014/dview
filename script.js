@@ -181,4 +181,24 @@ document.addEventListener('DOMContentLoaded', function() {
         mainContent.style.position = 'relative';
         mainContent.style.zIndex = '1';
     }
+
+    // Ensure content is visible
+    document.body.style.display = 'block';
+    
+    // Handle dropdown toggle
+    function toggleDropdown(event, dropdownId, arrowId) {
+        event.preventDefault();
+        const dropdown = document.getElementById(dropdownId);
+        const arrow = document.getElementById(arrowId);
+        
+        if (dropdown) {
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            if (arrow) {
+                arrow.style.transform = dropdown.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0)';
+            }
+        }
+    }
+
+    // Make function available globally
+    window.toggleDropdown = toggleDropdown;
 });
