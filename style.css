@@ -104,7 +104,7 @@ body, html, ul {
 .hamburger-menu {
     display: none;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 1002;
 }
 
 .hamburger-menu span {
@@ -127,7 +127,7 @@ body, html, ul {
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .sidenav.active {
@@ -411,6 +411,14 @@ body, html, ul {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+    .navbar {
+        height: 60px;
     }
 }
 
