@@ -94,19 +94,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidenav = document.querySelector('.sidenav');
     const closeBtn = document.querySelector('.close-btn');
     const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+    const mainContent = document.querySelector('.advertisement-container');
 
-    // Toggle sidenav and hamburger visibility
+    // Toggle sidenav and adjust content
     hamburgerMenu.addEventListener('click', function(e) {
         e.stopPropagation();
         sidenav.classList.add('active');
-        hamburgerMenu.style.display = 'none'; // Hide hamburger when sidenav is open
+        hamburgerMenu.style.display = 'none';
+        
+        // Ensure main content is visible but pushed down
+        if (window.innerWidth <= 768) {
+            mainContent.style.marginTop = '60px';
+            mainContent.style.display = 'block';
+            mainContent.style.position = 'relative';
+            mainContent.style.zIndex = '1';
+        }
     });
 
-    // Close sidenav and show hamburger
+    // Close sidenav and readjust content
     closeBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         sidenav.classList.remove('active');
-        hamburgerMenu.style.display = 'block'; // Show hamburger when sidenav is closed
+        hamburgerMenu.style.display = 'block';
+        
+        // Reset main content position
+        if (window.innerWidth <= 768) {
+            mainContent.style.marginTop = '60px';
+            mainContent.style.display = 'block';
+            mainContent.style.position = 'relative';
+            mainContent.style.zIndex = '1';
+        }
     });
 
     // Handle dropdown toggles in sidenav
@@ -117,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const dropdown = this.nextElementSibling;
             dropdown.classList.toggle('active');
             
-            // Toggle chevron icon
             const icon = this.querySelector('i');
             icon.classList.toggle('fa-chevron-down');
             icon.classList.toggle('fa-chevron-up');
@@ -128,7 +144,15 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(e) {
         if (!sidenav.contains(e.target) && !hamburgerMenu.contains(e.target)) {
             sidenav.classList.remove('active');
-            hamburgerMenu.style.display = 'block'; // Show hamburger when clicking outside
+            hamburgerMenu.style.display = 'block';
+            
+            // Reset main content position
+            if (window.innerWidth <= 768) {
+                mainContent.style.marginTop = '60px';
+                mainContent.style.display = 'block';
+                mainContent.style.position = 'relative';
+                mainContent.style.zIndex = '1';
+            }
         }
     });
 
@@ -136,4 +160,25 @@ document.addEventListener('DOMContentLoaded', function() {
     sidenav.addEventListener('click', function(e) {
         e.stopPropagation();
     });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth <= 768) {
+            mainContent.style.marginTop = '60px';
+            mainContent.style.display = 'block';
+            mainContent.style.position = 'relative';
+            mainContent.style.zIndex = '1';
+        } else {
+            // Reset styles for desktop view
+            mainContent.style = '';
+        }
+    });
+
+    // Initial setup for mobile
+    if (window.innerWidth <= 768) {
+        mainContent.style.marginTop = '60px';
+        mainContent.style.display = 'block';
+        mainContent.style.position = 'relative';
+        mainContent.style.zIndex = '1';
+    }
 });
