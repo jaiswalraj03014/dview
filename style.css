@@ -101,7 +101,116 @@ body, html, ul {
     z-index: 1000;
     height: 80px;
 }
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
 
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Side Navigation - New */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.sidenav.active {
+    width: 250px;
+}
+
+.sidenav .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+.sidenav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidenav ul li {
+    padding: 15px 25px;
+}
+
+.sidenav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: 0.3s;
+    font-family: 'seasons', serif;
+}
+
+.sidenav-dropdown {
+    display: none;
+    padding-left: 20px;
+}
+
+.sidenav-dropdown.active {
+    display: block;
+}
+
+.sidenav-dropdown a {
+    padding: 10px 15px;
+}
+
+/* Logo */
+.logo img {
+    height: 120px;
+    max-height: 100%;
+}
+
+/* Menu - Updated */
+.menu {
+    display: block;
+}
+
+.menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 6px 10px;
+    line-height: 70px;
+    transition: all 0.3s ease;
+    font-family: 'seasons', serif;
+    font-weight: 500;
+}
 /* Logo */
 .logo img {
     height: 120px;
@@ -1377,5 +1486,31 @@ footer {
 
     .ad-widget-large, .ad-widget-small {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Mobile Navigation */
+    .hamburger-menu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: space-between;
+        height: 60px;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo img {
+        height: 80px;
     }
 }
