@@ -1,0 +1,1381 @@
+/* General Reset */
+body, html, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #ffe8cf;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'BauerBodoniItalic';
+    src: url('fonts/BauerBodoniItalic.otf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'seasons';
+    src: url('fonts/the-seasons.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'league';
+    src: url('/Users/aakashjaiswal/Desktop/Raj_Snacks_Parlour/League_Spartan/league_1.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'mont';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'mont-reg';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'sans';
+    src: url('/Users/aakashjaiswal/Desktop/dview/OnlineWebFonts_COM_8037294ec54f4d066547cb198610d8e1/Sans/Sans.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'lastica';
+    src: url('/Users/aakashjaiswal/Desktop/dview/fonts/fonnts.com-Lastica.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'FAIR';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/playfair-display/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'FAIR-b';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/playfair-display/PlayfairDisplay-Bold.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'itc';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/itc bauhaus/BauhausStd-Medium.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'itc-reg';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/itc bauhaus/BauhausStd-Light.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'FAIR-b';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/playfair-display/PlayfairDisplay-Bold.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'amb';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/ambiguity/FontsFree-Net-Ambiguity4.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+}
+
+/* Logo */
+.logo img {
+    height: 120px;
+    max-height: 100%;
+}
+
+/* Menu */
+.menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 6px 10px;
+    line-height: 70px;
+    transition: all 0.3s ease;
+    font-family: 'seasons', serif;
+    font-weight: 500;
+}
+
+.menu ul li a.active {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+.menu ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    display: block;
+    position: absolute;
+    top: 8%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.dropdown.show {
+    max-height: 500px;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+}
+
+.dropdown.closing {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Dropdown Columns */
+.dropdown .dropdown-column {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin: 10px;
+}
+
+.dropdown.show .dropdown-column {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dropdown Links */
+.dropdown .dropdown-column h3 {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    color: #707e5a;
+    font-family: sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.dropdown .dropdown-column a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown .dropdown-column a:hover {
+    background-color: #ffe8cf;
+    transform: scale(1.05);
+    border-radius: 5px;
+}
+
+/* Right Section */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust spacing between icons */
+}
+
+.right-section a {
+    font-size: 24px; /* Icon size */
+    color: white; /* Default icon color */
+    text-decoration: none; /* Remove underline for links */
+    padding: 8px; /* Padding for click area */
+    border-radius: 50%; /* Circular icon background */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.right-section a:hover {
+    background-color: #555; /* Dark background on hover */
+    color: #ffffff; /* Highlight icon color */
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+.right-section a:active {
+    transform: scale(0.95); /* Slightly shrink icon on click */
+}
+
+/* Specific styles for email and contact icons */
+.right-section .fa-envelope {
+    /* Light blue background for email */
+}
+
+.right-section .fa-envelope:hover {
+ /* Darker blue on hover */
+}
+
+.right-section .fa-phone {
+   /* Green background for phone */
+}
+
+.right-section .fa-phone:hover {
+     /* Darker green on hover */
+}
+
+#searchDropdown {
+    display: block; /* Initially hidden */
+    position: absolute;
+    top: 83px; /* Adjust based on your layout */
+    background-color: #999;
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    z-index: 100;
+    align-items: ends;
+    width: 300px;
+}
+
+/* Search input field */
+#searchInput {
+    width: 280px;;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Make it rounded */
+    outline: none;
+    transition: all 0.3s ease;
+    height: 40px;
+
+}
+
+/* Focus effect */
+#searchInput:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Suggestion dropdown list */
+#suggestionList {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    max-height: 200px; /* Add scroll if suggestions are many */
+    overflow-y: auto;
+    background-color: #999;
+}
+
+/* Suggestion items */
+#suggestionList li {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.3s ease;
+    background-color: white;
+}
+
+/* Highlighted suggestion */
+#suggestionList li:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+/*leaf section*/
+
+.floating-leaf {
+    position: fixed; /* or absolute, depending on your layout */
+    z-index: -1; /* Set to a low positive value */
+    opacity: 1; /* Ensure it is fully visible */
+    height: 600px; /* Adjust height as needed */
+    width: auto; /* Adjust width as needed */
+}
+
+.leaf-left {
+    left: -300px; /* Position it on the left */
+    top: 10%; /* Adjust as needed */
+}
+
+.leaf-right {
+    right: -300px; /* Position it on the right */
+    top: 10%; /* Adjust as needed */
+}
+@keyframes floatLeft {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatRight {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+/* PROJECT Title */
+.project-section {
+    position: relative; /* Enables stacking of child elements */
+    text-align: center; /* Center align the text */
+    margin-top: 2rem; /* Space above the section */
+    z-index: 1;
+}
+.project-title {
+    margin-top: 10%;
+    font-family: 'seasons', serif;
+    font-size: 130px; /* Large text */
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1); /* Semi-transparent black */
+    font-family: 'league';
+    letter-spacing: 10px;
+}
+
+/* AWARD WINNING PROJECT Title */
+.award-title {
+    font-family: 'mont', serif;
+    font-size: 40px; /* Smaller than PROJECT title */
+    font-weight: bold;
+    color: #000; /* Solid black */
+    position: absolute; /* Position it absolutely */
+    top: 1.5%; /* Adjust this to position it correctly on top of PROJECT title */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust its position */
+    z-index: 2; /* Ensure it appears above PROJECT title */
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+/* Image Widget Container */
+/* Image Widget Container */
+.image-widget-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 2rem auto;
+    width: 90%; /* Adjust as needed */
+    height: 800px; /* Adjust height */
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Image Widget */
+.image-widget {
+    position: relative;
+    display: flex;  /* Lay images out horizontally */
+    transition: transform 2s ease-in-out;
+}
+
+.image-widget img {
+    position: relative;
+    width: 60%; /* Keep images as per the set width */
+    height: 65%; /* Keep images as per the set height */
+    object-fit: cover;
+    border-radius: 30px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.image-widget img.active {
+    opacity: 1; /* Only the active image is visible */
+}
+
+.image-widget img.inactive {
+    opacity: 0; /* Inactive images are hidden */
+}
+/* Text Overlay Widget */
+.text-overlay-widget {
+    position: absolute;
+    bottom: 0%; /* Position it at the bottom-right of the image */
+    right: 0%;
+    background: white; /* Semi-transparent background */
+    color: black;
+    padding: 2rem; /* Increased padding for more space around the text */
+    border-radius: 8px;
+    text-align: left;
+    width: 45%; /* Increased max-width to allow for more text */
+    font-size: 24px; /* Increased font size */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    height: 60%;
+    align-items: start;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 2rem;
+    z-index: 1;
+
+}
+
+/* Optional: You can also adjust the h3 and p tags within the text-overlay-widget */
+.text-overlay-widget h1 {
+    font-size: 25px; /* Larger title text */
+    margin-bottom: 0rem; /* Space between title and paragraph */
+    font-family: 'MONT';
+    
+}
+
+.text-overlay-widget h3 {
+    font-size: 44px; /* Larger title text */
+    margin-bottom: 1rem; /* Space between title and paragraph */
+    font-family: 'MONT';
+    margin-top: 1%;
+}
+
+.text-overlay-widget p {
+    font-size: 18px; /* Larger paragraph text */
+    font-family: 'mont-reg';
+}
+.project-button {
+    padding: 0.75rem 2rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 8%;
+    margin-left: 50%;
+    margin-top: 2%;
+    z-index: 1;
+}
+
+.project-button:hover {
+    background-color: rgb(225, 225, 225);
+}
+
+
+.intro-section {
+    position: relative; /* Enables stacking of child elements */
+    text-align: center; /* Center align the text */
+    margin-top: 2%; /* Space above the section */
+    z-index: 1;
+}
+
+/* PROJECT Title */
+.intro-title {
+    margin-top: 10%;
+    font-family: 'seasons', serif;
+    font-size: 120px; /* Large text */
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1); /* Semi-transparent black */
+    font-family: 'league';
+    letter-spacing: 10px;
+}
+
+/* AWARD WINNING PROJECT Title */
+.craft-title {
+    font-family: 'mont', serif;
+    font-size: 40px; /* Smaller than PROJECT title */
+    font-weight: bold;
+    color: #000; /* Solid black */
+    position: absolute; /* Position it absolutely */
+    top: 1%; /* Adjust this to position it correctly on top of PROJECT title */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust its position */
+    z-index: 2; /* Ensure it appears above PROJECT title */
+    letter-spacing: 5px;
+    text-align: center;
+}
+/* Container for the intro widget */
+.intro-widget {
+    display: flex;
+    align-items: center; /* Align items at the top */
+    gap: 2rem; /* Space between the image and text sections */
+    margin-top: 2rem;
+    padding: 1rem;
+    background: url(/Users/aakashjaiswal/Desktop/dview/UI:UX/bg1.png);
+    background-size: cover; /* Light background for better contrast */
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    margin: 5%;
+    
+}
+
+/* Image Section */
+.widget-image {
+    width: 40%; /* Image section takes 40% of the container width */
+    text-align: center;
+    margin: 5%;
+}
+
+.widget-image img {
+    width: 100%; /* Make the image fill its container */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.acknowledge-text {
+    margin-top: 1rem;
+    font-size: 20px;
+    color: white; /* Subtle text color */
+    text-align: center;
+    font-family: 'mont';
+    font-weight: 500;
+}
+
+/* Text Section */
+.widget-content {
+    width: 60%; /* Text section takes 60% of the container width */
+}
+.widget-content h5 {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: start;
+    font-family: 'mont';
+    letter-spacing: 2px;
+}
+.widget-content h5::before {
+    content: ''; /* No text, only a visual */
+    display: inline-block;
+    width: 50px; /* Width of the line */
+    height: 5px; /* Thickness of the line */
+    background-color: #ffbd2e; /* Line color */
+    margin-right: 10px; /* Space between the line and text */
+    vertical-align: middle; /* Align with text vertically */
+    border-radius: 2px; /* Optional: Make the line edges rounded */
+}
+.widget-content h3 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    color: white;
+    font-family: 'mont';
+    text-align: start;
+    padding-left: 5%;
+    padding-right:10%;
+    text-transform: uppercase;
+}
+
+.widget-content p {
+    font-size: 18px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: white;
+    font-family: 'mont-reg';
+    font-weight: normal;
+    padding-left: 5%;
+    padding-right:10%;
+    text-align: start;
+}
+
+/* Button */
+.widget-button {
+    padding: 0.75rem 2rem;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 8%;
+    margin-left: 60%;
+    margin-top: 5%;
+}
+
+.widget-button:hover {
+    background-color: rgb(225, 225, 225);
+}
+
+
+.options-section {
+    position: relative; /* Enables stacking of child elements */
+    text-align: center; /* Center align the text */
+    margin-top: 2rem; /* Space above the section */
+}
+
+/* PROJECT Title */
+.options-title {
+    margin-top: 10%;
+    font-family: 'seasons', serif;
+    font-size: 120px; /* Large text */
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1); /* Semi-transparent black */
+    font-family: 'league';
+    letter-spacing: 10px;
+    line-height: 130px;
+}
+
+/* AWARD WINNING PROJECT Title */
+.choose-title {
+    font-family: 'mont', serif;
+    font-size: 40px; /* Smaller than PROJECT title */
+    font-weight: bold;
+    color: #000; /* Solid black */
+    position: absolute; /* Position it absolutely */
+    top: 10%; /* Adjust this to position it correctly on top of PROJECT title */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust its position */
+    z-index: 2; /* Ensure it appears above PROJECT title */
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+
+.image-wid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 15rem;
+    row-gap: 7rem;
+    margin-top: 10%;
+    background-color: #ffe8cf;
+}
+
+/* Individual Image Widget */
+.image-wid {
+    position: relative;
+    width: 200px;
+    text-align: center;
+    background-color: #ffe8cf;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-image:hover {
+    transform: translate(-50%, -8px); /* Lift slightly less for a natural look */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25); /* Enhanced but controlled shadow */
+}
+/* Hover Image Styling */
+.hover-image {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%, 0); /* Center the image */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ffe8cf;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle default shadow */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth and natural transition */
+}
+
+.hover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Widget Body Styling */
+.widget-body {
+    margin-top: 80px; /* To offset for the hovering image */
+    background-color: #ffe8cf;
+}
+
+.widget-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #333;
+    font-family:sans-serif;
+
+}
+
+.widget-description {
+    font-size: 16px;
+    color: black;
+    line-height: 1.4;
+    font-family: sans-serif;
+
+}
+
+.feedback-section {
+    position: relative; /* Enables stacking of child elements */
+    text-align: center; /* Center align the text */
+    margin-top: 2rem; /* Space above the section */
+}
+
+/* PROJECT Title */
+.feedback-title {
+    margin-top: 10%;
+    font-family: 'seasons', serif;
+    font-size: 130px; /* Large text */
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1); /* Semi-transparent black */
+    font-family: 'league';
+    letter-spacing: 10px;
+    z-index: 3;
+}
+
+.feedback-subtitle {
+    font-family: 'mont', serif;
+    font-size: 40px; /* Large text */
+    font-weight: bold;
+    color: #000; /* Solid black */
+    position: absolute; /* Position it absolutely */
+    top: 0%; /* Position above testimonials-title */
+    left: 5%; /* Align to the start */
+    transform: translate(0, 0); /* No centering adjustment */
+    z-index: 2; /* Ensure it appears above background or overlapping elements */
+    letter-spacing: 5px;
+    text-align: start;
+}
+.feedback-subtitle::before {
+    content: ''; /* No text, only a visual */
+    display: inline-block;
+    width: 50px; /* Width of the line */
+    height: 5px; /* Thickness of the line */
+    background-color: #ffbd2e; /* Line color */
+    margin-right: 10px; /* Space between the line and text */
+    vertical-align: middle; /* Align with text vertically */
+    border-radius: 2px; /* Optional: Make the line edges rounded */
+}
+/* AWARD WINNING PROJECT Title */
+.testimonials-title {
+    font-family: 'mont', serif;
+    font-size: 35px; /* Slightly smaller text */
+    font-weight: bold;
+    color: #000; /* Solid black */
+    position: absolute; /* Position it absolutely */
+    top: 5%; /* Position below feedback-subtitle */
+    left: 5%; /* Align to the start */
+    transform: translate(0, 0); /* No centering adjustment */
+    z-index: 1; /* Ensure layering is below subtitle if overlapping occurs */
+    letter-spacing: 5px;
+    text-align: start; /* Align text to the start */
+}
+
+.feedback-widgets {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-family: sans-serif;
+    color: #ffe8cf;
+}
+
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+}
+
+.feedback-widget {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Top bar styles */
+.feedback-widget-header {
+    background-color: black;
+    height: 30px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    position: absolute; /* Position at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; /* Ensures it stays above other content */
+}
+.dots-container {
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background-color: #ff5f57;
+}
+
+.dot.yellow {
+    background-color: #ffbd2e;
+}
+
+.dot.green {
+    background-color: #28c840;
+}
+
+/* Unique widget sizes */
+.feedback-widget-large {
+    width: 65%;
+    height: 60vh;
+    margin-left: 25%;
+    margin-right: 20%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    justify-content: center; /* Center content vertically */
+    
+}
+
+.feedback-widget-medium {
+    width: 65%;
+    height: 45vh;
+    margin-right: 30%;
+    margin-left: 7%;
+    margin-bottom: 7%;
+    justify-content: center; /* Center content vertically */
+}
+
+.feedback-widget-small {
+    width: 65%;
+    height: 20vh;
+    margin-right: 30%;
+    margin-left: 7%;
+    justify-content: center; /* Center content vertically */
+}
+
+/* Feedback text styles */
+.feedback-text {
+    text-align: start;
+    font-size: 20px;
+    font-weight:100;
+    margin-bottom: 10px;
+    margin-top: 20px; /* Space below the top bar */
+    padding-left: 5%;
+    padding-right: 5%;
+    
+
+}
+
+/* Feedback provider styles */
+.feedback-provider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 5%;
+}
+
+.provider-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: fill;
+}
+
+.provider-image {
+    border-radius: 50%;
+}
+
+.feedback-provider p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+.creds-section {
+    position: relative; /* Enables stacking of child elements */
+    text-align: center; /* Center align the text */
+    margin-top: 2rem; /* Space above the section */
+}
+
+/* PROJECT Title */
+.creds-title {
+    margin-top: 10%;
+    font-family: 'seasons', serif;
+    font-size: 130px; /* Large text */
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1); /* Semi-transparent black */
+    font-family: 'league';
+    letter-spacing: 10px;
+    line-height: 130px;
+}
+
+/* AWARD WINNING PROJECT Title */
+.cer-title {
+    font-family: 'mont', serif;
+    font-size: 40px; /* Smaller than PROJECT title */
+    font-weight: bold;
+    color: #000; /* Solid black */
+    position: absolute; /* Position it absolutely */
+    top: 5%; /* Adjust this to position it correctly on top of PROJECT title */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust its position */
+    z-index: 2; /* Ensure it appears above PROJECT title */
+    letter-spacing: 5px;
+    text-align: center;
+}
+.certifications-row {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Align images vertically */
+    gap: 7%; /* Add spacing between images */
+    margin-top: 20px;
+    background-color: #ffe8cf;
+}
+
+.certification-image {
+    width: 120px; /* Adjust as needed */
+    height: 120px; /* Adjust as needed */
+    object-fit: contain; /* Ensures the images fit within their bounds without distortion */
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-bottom: 10%;
+}
+/* Advertisement Widgets */
+/* Main Advertisement Container */
+.advertisement-container {
+    display: flex; /* Flexbox layout */
+    gap: 1rem; /* Space between containers */
+    margin: 2rem 0;
+    z-index: 3;
+}
+
+/* Column for Large and Small Widgets */
+.ad-column {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    gap: 1rem; /* Space between stacked widgets */
+    flex: 1; /* Allow the column to take up available space */
+    width: 60vh;
+    z-index: 3;
+}
+
+/* Large Widget */
+.ad-widget-large {
+    background-color: #e8f4f8;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'seasons', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    height: 300px;
+    margin-top: 7%;
+    margin-bottom: 2%;
+    margin-left: 7%;/* Fixed height */
+    background: url(/Users/aakashjaiswal/Desktop/dview/UI:UX/bg_large_2.png);
+    background-size: cover;
+    z-index: 3;
+}
+.left-widget {
+    flex: 0 0 50%; /* Fixed width of 55% */
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center the image vertically */
+}
+
+.left-widget img {
+    width: 70%; /* Image fills the left widget */
+    height: auto;
+    object-fit: cover; /* Ensure the image doesn't distort */
+    border-radius: 0;
+}
+
+/* Right Widget: Takes up 45% and stacks content in a column */
+.right-widget {
+    flex: 0 0 50%; /* Fixed width of 45% */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 20px;
+    
+}
+
+/* Styling for Right Widget Content */
+.ad-heading {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: #333;
+    font-family: 'FAIR-b';
+    font-weight: 500;
+}
+
+.ad-subheading {
+    margin-top: 0px;
+    font-size: 50px;
+    color: #ff6100;
+    margin-bottom: 2px;
+}
+
+.ad-desp {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 8px;
+    margin-top: 0px;
+    text-align: start;
+    font-family: 'mont-reg';
+
+}
+
+.ad-button {
+    background-color: black;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    align-self: self-end;
+    margin-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-weight: bold;
+}
+
+.ad-button:hover {
+    background-color: #242424;
+}
+/* Small Widget */
+.ad-widget-small {
+    background:url(/Users/aakashjaiswal/Desktop/dview/UI:UX/SMALL_BG.png);
+    object-fit:fill;
+    background-position: 50% 40%;
+    background-size: cover;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'seasons', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    height: 200px; /* Fixed height */
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 7%;
+    flex-direction: column;
+    z-index: 3;
+}
+
+.small-image{
+    width: 100%; /* Full width for the image */
+    height: auto;
+    margin-top: 4% ;
+    margin-bottom: 1px;
+    border-radius: 8px;
+}
+.adsense-line{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 1px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: 'itc-reg';
+    letter-spacing: 1px;
+}
+.adsense-title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0px;
+    color: #ff9900;
+    font-family: 'amb';
+    letter-spacing: 1px;
+}
+/* Medium Widget (in separate container) */
+/* Medium Widget (in separate container) */
+.ad-widget-medium {
+    background-color: black;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'seasons', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    height: auto; /* Adjust height to content */
+    width: 20%; /* Set to a smaller width */
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-left: 2%;
+    flex-direction: column; 
+}
+.ad-div{
+text-align: start;
+padding-left: -10%;
+
+}
+
+.ad-logo {
+    width: 100px; /* Set logo width */
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.ad-line {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: white;
+    font-family: 'lastica';
+    letter-spacing: 3px;
+}
+
+.ad-image {
+    width: 100%; /* Full width for the image */
+    height: auto;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+.ad-description {
+    font-size: 12px;
+    color: white;
+    margin: 10px 0;
+    text-align: start;
+    font-family: 'mont-reg';
+    letter-spacing: 2px;
+    align-self: self-start;
+}
+.ad-description-last {
+    font-size: 25px;
+    color: rgb(255, 107, 15);
+    margin: 10px 0;
+    margin-top: 2px;
+    text-align: start;
+    font-family: 'lastica';
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.ad-button-1 {
+    
+    background-color: white;
+    color:black;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    align-items: end;
+    margin-top: 10px;
+}
+
+.ad-button-1:hover {
+    background-color: rgb(222, 222, 222);
+}
+
+/* General Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  /* Left Section */
+  .footer-left {
+    max-width: 25%;
+    text-align: left;
+    position: relative;
+    margin-top:5%;
+    font-family: sans-serif; /* Make the container relative for absolute positioning of child elements */
+  }
+  
+  .footer-logo {
+    width: 18vh;
+    margin-bottom: 0px;
+    margin-left: 20%;
+    padding-top: 0px;
+   margin-bottom: 7%; /* Lifts the logo higher */
+  }
+  
+  .footer-left p {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 5px; /* Brings the text closer to the logo */
+    text-align: start;
+    margin-left: 20%;
+  }
+  
+  /* Right Section */
+  .footer-right {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 70%;
+    margin-top: 5%;
+    background-color: #333;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 150px;
+    margin: 0 20px;
+  }
+  
+  .footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    font-weight: 550;
+    text-align: start;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    font-family: sans-serif;
+    text-align: start;
+    background-color: #333;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-column ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .footer-credentials {
+    background-color: #333;
+    color: #fff;
+    padding-top: 2%;
+    font-family: sans-serif;
+
+  }
+  
+  .footer-credentials-line {
+    border-top: 1px solid #555;
+    margin-bottom:20px;
+    width: 100%;
+  }
+  
+  .footer-credentials-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-credentials-left p {
+    margin: 0;
+    font-size:20px;
+  }
+  
+  .footer-credentials-right {
+  text-align: center; /* Center the content */
+  display: flex;
+  flex-direction: column; /* Stack the text and logo */
+  align-items: center; /* Center align items */
+}
+
+.footer-credentials-right p {
+  margin: 0 0 20px 0; /* Space between text and logo */
+  font-size: 18px;
+  font-weight:100;
+}
+
+.footer-credentials-logo {
+  width: 15vh;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu ul {
+        display: none;
+    }
+
+    .dropdown {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    .dropdown .dropdown-column {
+        width: 100%;
+    }
+
+    .advertisement-container {
+        flex-direction: column;
+    }
+
+    .ad-widget-large, .ad-widget-small {
+        width: 100%;
+    }
+}
