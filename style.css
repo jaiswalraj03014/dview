@@ -88,7 +88,7 @@ body, html, ul {
     font-style: italic;
     font-weight: normal;
 }
-/* Navbar base styles */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -100,36 +100,30 @@ body, html, ul {
     top: 0;
     z-index: 1000;
     height: 80px;
-    width: 100%;
 }
 
-/* Logo styles - fixed position */
-.logo {
-    position: relative; /* Changed from absolute */
-    z-index: 1000;
-}
-
+/* Logo */
 .logo img {
     height: 120px;
     max-height: 100%;
 }
 
-/* Desktop menu - prevent shifting */
-.menu.desktop-menu {
-    display: block;
-    position: relative;
-    z-index: 1000;
-}
-
-.menu.desktop-menu ul {
+/* Menu */
+.menu ul {
     display: flex;
     gap: 20px;
     list-style: none;
+    align-items: center;
     margin: 0;
     padding: 0;
+    background-color: #333;
 }
 
-.menu.desktop-menu ul li a {
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -140,265 +134,15 @@ body, html, ul {
     font-weight: 500;
 }
 
-/* Right section - prevent shifting */
-.right-section.desktop-only {
-    position: relative;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.menu ul li a.active {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
 }
 
-.right-section.desktop-only a {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-    padding: 8px;
-}
-
-/* Mobile Elements - Hidden by Default */
-.hamburger-menu {
-    display: none;
-    cursor: pointer;
-}
-
-.sidenav {
-    height: 100vh;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    overflow-x: hidden;
-    transition: 0.3s;
-    z-index: 1001;
-}
-
-.sidenav.active {
-    width: 250px;
-}
-
-.sidenav .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 36px;
-    color: white;
-    cursor: pointer;
-}
-
-.sidenav ul {
-    list-style: none;
-    padding: 0;
-    margin: 60px 0 0 0; /* Add top margin to account for close button */
-}
-
-.sidenav ul li {
-    padding: 15px 25px;
-}
-
-.sidenav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    transition: 0.3s;
-}
-
-/* Contact items in sidenav */
-.sidenav ul li.contact-item {
-    padding: 10px 25px;
-}
-
-.sidenav ul li.contact-item a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 16px;
-}
-
-.sidenav ul li.contact-item i {
-    font-size: 20px;
-    width: 24px;
-}
-
-.sidenav ul li.contact-item span {
-    font-family: 'mont-reg', sans-serif;
-}
-
-/* Add a separator before contact items */
-.sidenav ul li.contact-item:first-of-type {
-    margin-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-}
-
-/* Sidenav Contact Section */
-.sidenav-contact {
-    margin-top: auto; /* Push to bottom */
-    padding: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: #333;
-}
-
-.sidenav-contact h3 {
-    color: white;
-    font-size: 18px;
-    margin-bottom: 15px;
-    font-family: 'seasons', serif;
-}
-
-.contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-links a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 0;
-}
-
-.contact-links a i {
-    font-size: 20px;
-    width: 24px;
-}
-
-.contact-links a span {
-    font-family: 'mont-reg', sans-serif;
-    color: white;
-}
-
-/* Dropdown in sidenav */
-.sidenav-dropdown {
-    display: none;
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-.sidenav-dropdown.active {
-    display: block;
-}
-
-.sidenav-dropdown a {
-    padding: 10px 0;
-}
-
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
-    .navbar {
-        position: sticky;
-        top: 0;
-    }
-
-    .logo {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .logo img {
-        height: 80px;
-    }
-
-    .hamburger-menu {
-        position: relative;
-        z-index: 1002;
-    }
-
-    .hamburger-menu span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        margin: 5px 0;
-        transition: 0.3s;
-    }
-
-    /* Hide Desktop Elements */
-    .menu.desktop-menu {
-        display: none;
-    }
-
-    .right-section.desktop-only {
-        display: none;
-    }
-
-    /* Sidenav Styles */
-    .sidenav {
-        position: fixed;
-        z-index: 1001;
-    }
-
-    .sidenav.active {
-        width: 250px;
-    }
-
-    .sidenav .close-btn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-        color: white;
-        cursor: pointer;
-    }
-
-    .sidenav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .sidenav ul li {
-        padding: 15px 25px;
-    }
-
-    .sidenav ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        display: block;
-        transition: 0.3s;
-    }
-
-    /* Sidenav Contact Section */
-    .sidenav-contact {
-        padding: 20px;
-        margin-top: 30px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .sidenav-contact h3 {
-        color: white;
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-
-    .contact-links {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .contact-links a {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-    }
-
-    .contact-links a i {
-        font-size: 20px;
-        width: 24px;
-    }
+.menu ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
 }
 
 /* Dropdown Styles */
@@ -473,6 +217,32 @@ body, html, ul {
     background-color: #ffe8cf;
     transform: scale(1.05);
     border-radius: 5px;
+}
+
+/* Right Section */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust spacing between icons */
+}
+
+.right-section a {
+    font-size: 24px; /* Icon size */
+    color: white; /* Default icon color */
+    text-decoration: none; /* Remove underline for links */
+    padding: 8px; /* Padding for click area */
+    border-radius: 50%; /* Circular icon background */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.right-section a:hover {
+    background-color: #555; /* Dark background on hover */
+    color: #ffffff; /* Highlight icon color */
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+.right-section a:active {
+    transform: scale(0.95); /* Slightly shrink icon on click */
 }
 
 /* Specific styles for email and contact icons */
@@ -1608,29 +1378,4 @@ footer {
     .ad-widget-large, .ad-widget-small {
         width: 100%;
     }
-}
-
-/* Active tab styles for both desktop and mobile */
-.menu.desktop-menu ul li a.active,
-.sidenav ul li a.active {
-    background-color: #999;
-    border-radius: 5px;
-}
-
-/* Desktop menu active state */
-.menu.desktop-menu ul li a.active {
-    padding: 10px 15px;
-}
-
-/* Sidenav active state */
-.sidenav ul li a.active {
-    padding: 10px 15px;
-    margin: -10px -15px; /* Compensate for parent padding */
-}
-
-/* Optional: Add hover effect for better interaction */
-.menu.desktop-menu ul li a:hover,
-.sidenav ul li a:hover {
-    background-color: rgba(153, 153, 153, 0.7); /* Slightly transparent version of #999 */
-    border-radius: 5px;
 }
