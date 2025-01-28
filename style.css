@@ -8,19 +8,7 @@ body, html, ul {
     overflow-x: hidden;
     background-color: #ffe8cf;
 }
-.mobile-menu-icon {
-    display: none;
-    cursor: pointer;
-    padding: 10px;
-}
-.mobile-menu-icon span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: 0.3s;
-}
+
 /* Fonts */
 @font-face {
     font-family: 'BauerBodoniItalic';
@@ -113,7 +101,6 @@ body, html, ul {
     z-index: 1000;
     height: 80px;
 }
-
 
 /* Logo */
 .logo img {
@@ -1392,4 +1379,3 @@ footer {
         width: 100%;
     }
 }
-
