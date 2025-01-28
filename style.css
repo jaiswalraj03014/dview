@@ -117,6 +117,8 @@ body, html, ul {
     display: flex;
     gap: 20px;
     list-style: none;
+    background-color: #333;
+
 }
 
 .menu.desktop-menu ul li a {
