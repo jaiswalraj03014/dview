@@ -385,21 +385,25 @@ menu.desktop-menu ul li a.active {
     }
 
     .advertisement-container {
-        flex-direction: column;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
         padding: 10px;
-        margin: 0;
+        box-sizing: border-box;
+        background-color: #fff;
+        z-index: 1;
     }
 
     .ad-column {
         width: 100%;
-        margin: 0;
+        display: block;
     }
 
     .ad-widget-large {
+        width: 100%;
         flex-direction: column;
-        width: 90%;
-        margin: 20px auto;
-        height: auto;
+        margin-bottom: 20px;
     }
 
     .left-widget {
@@ -407,71 +411,43 @@ menu.desktop-menu ul li a.active {
         height: 200px;
     }
 
-    .left-widget img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
     .right-widget {
         width: 100%;
         padding: 20px;
-        text-align: center;
     }
 
-    .ad-heading {
-        font-size: 30px;
-        margin-bottom: 5px;
-    }
-
-    .ad-subheading {
-        font-size: 40px;
-        margin-top: 0;
-    }
-
-    .ad-desp {
-        font-size: 16px;
-        padding: 0 10px;
-    }
-
-    .ad-button {
-        margin: 15px auto;
-        padding: 10px 25px;
-    }
-
-    .ad-widget-small {
-        width: 90%;
-        margin: 20px auto;
-        height: auto;
-    }
-
+    .ad-widget-small,
     .ad-widget-medium {
-        width: 90%;
-        margin: 20px auto;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    /* Ensure all content is visible */
+    .project-section,
+    .intro-section,
+    .options-section,
+    .feedback-section,
+    .creds-section {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        display: block;
+    }
+
+    /* Reset any transforms or translations */
+    .image-widget,
+    .text-overlay-widget,
+    .intro-widget,
+    .options-widget,
+    .feedback-widgets {
+        transform: none;
+        position: relative;
+    }
+
+    /* Ensure images are responsive */
+    img {
+        max-width: 100%;
         height: auto;
-    }
-
-    .ad-logo {
-        width: 80px;
-        margin: 10px 0;
-    }
-
-    .ad-line {
-        font-size: 18px;
-    }
-
-    .ad-description {
-        font-size: 14px;
-    }
-
-    .ad-description-last {
-        font-size: 20px;
-    }
-
-    .ad-button-1 {
-        margin: 15px auto;
-        padding: 8px 20px;
-        font-size: 16px;
     }
 }
 
@@ -493,6 +469,18 @@ menu.desktop-menu ul li a.active {
 
     .left-widget {
         height: 180px;
+    }
+
+    .advertisement-container {
+        padding: 5px;
+    }
+
+    .ad-heading {
+        font-size: 24px;
+    }
+
+    .ad-subheading {
+        font-size: 20px;
     }
 }
 
