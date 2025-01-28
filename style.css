@@ -140,7 +140,9 @@ body, html, ul {
     align-items: center;
     gap: 20px;
 }
-
+menu.desktop-menu ul li a.active {
+    padding: 10px 15px;
+}
 .right-section.desktop-only a {
     font-size: 24px;
     color: white;
@@ -199,6 +201,10 @@ body, html, ul {
     display: block;
     transition: 0.3s;
 }
+.sidenav ul li a.active {
+    padding: 10px 15px;
+    margin: -10px -15px; /* Compensate for parent padding */
+}
 
 /* Sidenav Contact Section */
 .sidenav-contact {
@@ -240,7 +246,11 @@ body, html, ul {
     font-family: 'mont-reg', sans-serif;
     color: white;
 }
-
+.menu.desktop-menu ul li a:hover,
+.sidenav ul li a:hover {
+    background-color: rgba(153, 153, 153, 0.7); /* Slightly transparent version of #999 */
+    border-radius: 5px;
+}
 /* Dropdown in sidenav */
 .sidenav-dropdown {
     display: none;
