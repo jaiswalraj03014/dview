@@ -108,22 +108,18 @@ body, html, ul {
     max-height: 100%;
 }
 
-/* Menu */
-.menu ul {
+/* Desktop Menu */
+.menu.desktop-menu {
+    display: block;
+}
+
+.menu.desktop-menu ul {
     display: flex;
     gap: 20px;
     list-style: none;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    background-color: #333;
 }
 
-.menu ul li {
-    position: relative;
-}
-
-.menu ul li a {
+.menu.desktop-menu ul li a {
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -134,15 +130,146 @@ body, html, ul {
     font-weight: 500;
 }
 
-.menu ul li a.active {
-    background-color: white;
-    color: black;
-    border-radius: 5px;
+/* Right Section */
+.right-section.desktop-only {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.menu ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
+.right-section.desktop-only a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
+
+/* Mobile Elements - Hidden by Default */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.sidenav {
+    display: none;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    /* Show Mobile Elements */
+    .hamburger-menu {
+        display: block;
+        z-index: 1002;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    /* Hide Desktop Elements */
+    .menu.desktop-menu {
+        display: none;
+    }
+
+    .right-section.desktop-only {
+        display: none;
+    }
+
+    /* Mobile Logo Position */
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+    /* Sidenav Styles */
+    .sidenav {
+        display: block;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+        z-index: 1001;
+    }
+
+    .sidenav.active {
+        width: 250px;
+    }
+
+    .sidenav .close-btn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .sidenav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidenav ul li {
+        padding: 15px 25px;
+    }
+
+    .sidenav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        transition: 0.3s;
+    }
+
+    /* Sidenav Contact Section */
+    .sidenav-contact {
+        padding: 20px;
+        margin-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sidenav-contact h3 {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-links a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .contact-links a i {
+        font-size: 20px;
+        width: 24px;
+    }
 }
 
 /* Dropdown Styles */
@@ -217,32 +344,6 @@ body, html, ul {
     background-color: #ffe8cf;
     transform: scale(1.05);
     border-radius: 5px;
-}
-
-/* Right Section */
-.right-section {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Adjust spacing between icons */
-}
-
-.right-section a {
-    font-size: 24px; /* Icon size */
-    color: white; /* Default icon color */
-    text-decoration: none; /* Remove underline for links */
-    padding: 8px; /* Padding for click area */
-    border-radius: 50%; /* Circular icon background */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.right-section a:hover {
-    background-color: #555; /* Dark background on hover */
-    color: #ffffff; /* Highlight icon color */
-    transform: scale(1.1); /* Slightly enlarge icon on hover */
-}
-
-.right-section a:active {
-    transform: scale(0.95); /* Slightly shrink icon on click */
 }
 
 /* Specific styles for email and contact icons */
