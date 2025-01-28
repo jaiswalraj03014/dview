@@ -117,7 +117,6 @@ body, html, ul {
     display: flex;
     gap: 20px;
     list-style: none;
-    background-color: #333;
 }
 
 .menu.desktop-menu ul li a {
@@ -180,7 +179,6 @@ body, html, ul {
     list-style: none;
     padding: 0;
     margin: 60px 0 0 0; /* Add top margin to account for close button */
-    background-color: #333;
 }
 
 .sidenav ul li {
@@ -1604,4 +1602,29 @@ footer {
     .ad-widget-large, .ad-widget-small {
         width: 100%;
     }
+}
+
+/* Active tab styles for both desktop and mobile */
+.menu.desktop-menu ul li a.active,
+.sidenav ul li a.active {
+    background-color: #999;
+    border-radius: 5px;
+}
+
+/* Desktop menu active state */
+.menu.desktop-menu ul li a.active {
+    padding: 10px 15px;
+}
+
+/* Sidenav active state */
+.sidenav ul li a.active {
+    padding: 10px 15px;
+    margin: -10px -15px; /* Compensate for parent padding */
+}
+
+/* Optional: Add hover effect for better interaction */
+.menu.desktop-menu ul li a:hover,
+.sidenav ul li a:hover {
+    background-color: rgba(153, 153, 153, 0.7); /* Slightly transparent version of #999 */
+    border-radius: 5px;
 }
