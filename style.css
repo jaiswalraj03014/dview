@@ -1,18 +1,12 @@
-/* Base styles */
-* {
+/* General Reset */
+body, html, ul {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
     width: 100%;
-    min-height: 100vh;
-    background: #fff;
-    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #ffe8cf;
 }
 
 /* Fonts */
@@ -94,183 +88,18 @@ body {
     font-style: italic;
     font-weight: normal;
 }
-/* Desktop Navbar styles */
+/* Navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background: #333;
-    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-}
-
-.logo {
-    height: 50px;
-}
-
-.logo img {
-    height: 100%;
-    width: auto;
-}
-
-.desktop-menu {
-    display: flex;
-    align-items: center;
-}
-
-.desktop-menu ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-.right-section {
-    display: flex;
-    gap: 20px;
-}
-
-/* Main content styles */
-.main-content {
-    position: relative;
-    width: 100%;
-    min-height: calc(100vh - 80px);
-    margin-top: 80px;
-    background: #fff;
-    z-index: 1;
-}
-
-/* Mobile styles */
-@media screen and (max-width: 768px) {
-    /* Reset any existing overlays */
-    body::before,
-    body::after {
-        display: none !important;
-    }
-
-    /* Navbar mobile adjustments */
-    .navbar {
-        height: 60px;
-        padding: 0 15px;
-    }
-
-    .logo {
-        height: 40px;
-    }
-
-    /* Hide desktop elements */
-    .desktop-menu,
-    .right-section,
-    .floating-leaf {
-        display: none !important;
-    }
-
-    /* Main content mobile adjustments */
-    .main-content {
-        margin-top: 60px;
-        min-height: calc(100vh - 60px);
-        width: 100%;
-        position: relative;
-        background: #fff;
-        z-index: 1;
-        overflow-x: hidden;
-        padding: 15px;
-    }
-
-    /* Remove any potential overlays */
-    .main-content::before,
-    .main-content::after {
-        display: none !important;
-    }
-
-    /* Section containers */
-    .advertisement-container,
-    .project-section,
-    .intro-section,
-    .options-section,
-    .feedback-section,
-    .creds-section {
-        width: 100%;
-        position: relative;
-        margin: 20px 0;
-        padding: 15px;
-        background: #fff;
-        z-index: 2;
-    }
-
-    /* Clear any floating elements */
-    .advertisement-container::after,
-    .project-section::after,
-    .intro-section::after,
-    .options-section::after,
-    .feedback-section::after,
-    .creds-section::after {
-        content: '';
-        display: table;
-        clear: both;
-    }
-
-    /* Advertisement adjustments */
-    .ad-widget-large,
-    .ad-widget-medium,
-    .ad-widget-small {
-        width: 100%;
-        margin: 15px 0;
-    }
-
-    /* Project section adjustments */
-    .image-widget-container {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    /* Options section adjustments */
-    .image-wid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        width: 100%;
-    }
-
-    /* Feedback section adjustments */
-    .feedback-widgets {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    /* Footer adjustments */
-    footer {
-        width: 100%;
-        position: relative;
-        background: #333;
-        color: #fff;
-        padding: 20px;
-        z-index: 2;
-    }
-}
-
-/* Ensure content visibility */
-.main-content * {
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-/* Responsive images */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Remove any unwanted overlays */
-.overlay,
-.modal,
-.popup {
-    display: none !important;
+    padding: 0 15px;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
 }
 
 /* Logo */
@@ -279,18 +108,22 @@ img {
     max-height: 100%;
 }
 
-/* Desktop Menu */
-.menu.desktop-menu {
-    display: block;
-}
-
-.menu.desktop-menu ul {
+/* Menu */
+.menu ul {
     display: flex;
     gap: 20px;
     list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
 }
 
-.menu.desktop-menu ul li a {
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -301,125 +134,15 @@ img {
     font-weight: 500;
 }
 
-/* Right Section */
-.right-section.desktop-only {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.menu ul li a.active {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
 }
 
-.right-section.desktop-only a {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-    padding: 8px;
-}
-
-/* Mobile Elements - Hidden by Default */
-.hamburger-menu {
-    display: none;
-    cursor: pointer;
-}
-
-.sidenav {
-    height: 100vh; /* Full height */
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    overflow-x: hidden;
-    transition: 0.3s;
-    z-index: 1001;
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-}
-
-.sidenav.active {
-    width: 250px;
-}
-
-.sidenav .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 36px;
-    color: white;
-    cursor: pointer;
-}
-
-.sidenav ul {
-    list-style: none;
-    padding: 0;
-    margin: 60px 0 0 0; /* Add top margin to account for close button */
-}
-
-.sidenav ul li {
-    padding: 15px 25px;
-}
-
-.sidenav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    transition: 0.3s;
-}
-
-/* Sidenav Contact Section */
-.sidenav-contact {
-    margin-top: auto; /* Push to bottom */
-    padding: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: #333;
-}
-
-.sidenav-contact h3 {
-    color: white;
-    font-size: 18px;
-    margin-bottom: 15px;
-    font-family: 'seasons', serif;
-}
-
-.contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-links a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 0;
-}
-
-.contact-links a i {
-    font-size: 20px;
-    width: 24px;
-}
-
-.contact-links a span {
-    font-family: 'mont-reg', sans-serif;
-    color: white;
-}
-
-/* Dropdown in sidenav */
-.sidenav-dropdown {
-    display: none;
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-.sidenav-dropdown.active {
-    display: block;
-}
-
-.sidenav-dropdown a {
-    padding: 10px 0;
+.menu ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
 }
 
 /* Dropdown Styles */
@@ -494,6 +217,32 @@ img {
     background-color: #ffe8cf;
     transform: scale(1.05);
     border-radius: 5px;
+}
+
+/* Right Section */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust spacing between icons */
+}
+
+.right-section a {
+    font-size: 24px; /* Icon size */
+    color: white; /* Default icon color */
+    text-decoration: none; /* Remove underline for links */
+    padding: 8px; /* Padding for click area */
+    border-radius: 50%; /* Circular icon background */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.right-section a:hover {
+    background-color: #555; /* Dark background on hover */
+    color: #ffffff; /* Highlight icon color */
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+.right-section a:active {
+    transform: scale(0.95); /* Slightly shrink icon on click */
 }
 
 /* Specific styles for email and contact icons */
@@ -1629,279 +1378,4 @@ footer {
     .ad-widget-large, .ad-widget-small {
         width: 100%;
     }
-}
-
-/* Mobile-first approach */
-@media screen and (max-width: 768px) {
-    /* Navbar */
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background: #333;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .logo {
-        height: 40px;
-    }
-
-    .logo img {
-        height: 100%;
-        width: auto;
-    }
-
-    /* Hide desktop elements */
-    .desktop-menu,
-    .right-section,
-    .floating-leaf {
-        display: none !important;
-    }
-
-    /* Main content */
-    .main-content {
-        padding-top: 60px;
-        width: 100%;
-        overflow-x: hidden;
-        background: #fff;
-    }
-
-    /* Sections */
-    .advertisement-container,
-    .project-section,
-    .intro-section,
-    .options-section,
-    .feedback-section,
-    .creds-section {
-        width: 100%;
-        padding: 20px;
-        margin: 10px 0;
-        background: #fff;
-    }
-
-    /* Advertisement section */
-    .ad-widget-large {
-        flex-direction: column;
-    }
-
-    .left-widget,
-    .right-widget {
-        width: 100%;
-    }
-
-    /* Project section */
-    .image-widget-container {
-        flex-direction: column;
-    }
-
-    .image-widget img {
-        width: 100%;
-        height: auto;
-        margin: 10px 0;
-    }
-
-    /* Options section */
-    .image-wid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* Feedback section */
-    .feedback-widgets {
-        flex-direction: column;
-    }
-
-    .feedback-widget {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    /* Footer */
-    footer {
-        width: 100%;
-        background: #333;
-        color: #fff;
-        padding: 20px;
-    }
-
-    .footer-container {
-        flex-direction: column;
-    }
-
-    .footer-left,
-    .footer-right {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .footer-column {
-        width: 100%;
-        margin: 15px 0;
-    }
-}
-
-/* Ensure images are responsive */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Text visibility */
-h1, h2, h3, h4, h5, h6, p {
-    color: inherit;
-}
-
-/* Main content styles */
-.main-content {
-    position: relative;
-    width: 100%;
-    min-height: calc(100vh - 60px); /* Subtract navbar height */
-    margin-top: 60px; /* Add navbar height as margin */
-    background: #fff;
-    z-index: 1; /* Lower than navbar */
-    overflow-x: hidden;
-}
-
-@media screen and (max-width: 768px) {
-    /* Navbar mobile adjustments */
-    .navbar {
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .logo {
-        height: 40px;
-    }
-
-    .logo img {
-        height: 100%;
-        width: auto;
-    }
-
-    /* Hide desktop elements */
-    .desktop-menu,
-    .right-section,
-    .floating-leaf {
-        display: none !important;
-    }
-
-    /* Main content mobile adjustments */
-    .main-content {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        margin-top: 60px;
-        padding: 15px;
-        background: #fff;
-        z-index: 1;
-    }
-
-    /* Section containers */
-    .advertisement-container,
-    .project-section,
-    .intro-section,
-    .options-section,
-    .feedback-section,
-    .creds-section {
-        width: 100%;
-        position: relative;
-        margin: 20px 0;
-        padding: 15px;
-        background: #fff;
-        z-index: 2; /* Higher than main-content */
-    }
-
-    /* Advertisement adjustments */
-    .ad-widget-large {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .left-widget,
-    .right-widget {
-        width: 100%;
-    }
-
-    /* Project section adjustments */
-    .image-widget-container {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .image-widget img {
-        width: 100%;
-        height: auto;
-        margin: 10px 0;
-    }
-
-    /* Options section adjustments */
-    .image-wid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        width: 100%;
-    }
-
-    /* Feedback section adjustments */
-    .feedback-widgets {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .feedback-widget {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    /* Footer adjustments */
-    footer {
-        width: 100%;
-        position: relative;
-        background: #333;
-        color: #fff;
-        padding: 20px;
-        z-index: 2;
-    }
-
-    .footer-container {
-        flex-direction: column;
-    }
-
-    .footer-left,
-    .footer-right {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .footer-column {
-        width: 100%;
-        margin: 15px 0;
-    }
-}
-
-/* Ensure all content is visible */
-.main-content * {
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-/* Responsive images */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Text visibility */
-h1, h2, h3, h4, h5, h6, p {
-    color: inherit;
 }
