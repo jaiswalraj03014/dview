@@ -96,22 +96,22 @@ body {
 }
 /* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-    background-color: #333;
-    color: white;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    left: 0;
+    width: 100%;
     height: 80px;
+    background: #333;
+    z-index: 1000;
 }
 
-/* Logo */
+.logo {
+    height: 50px;
+}
+
 .logo img {
-    height: 120px;
-    max-height: 100%;
+    height: 100%;
+    width: auto;
 }
 
 /* Desktop Menu */
@@ -162,46 +162,41 @@ body {
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
-    /* Navbar */
+    /* Navbar mobile */
     .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
         height: 60px;
-        background: #333;
-        z-index: 1000;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0 15px;
+        background: #333;
     }
 
-    /* Logo */
     .logo {
         height: 40px;
-        display: block !important; /* Force display */
-        position: relative;
-        z-index: 1001; /* Above other elements */
+        display: block !important;
     }
 
     .logo img {
         height: 100%;
         width: auto;
-        display: block !important; /* Force display */
+        display: block !important;
     }
 
-    /* Hide only desktop menu items */
-    .desktop-menu ul,
-    .right-section {
+    /* Hide desktop elements and dropdown */
+    .desktop-menu,
+    .right-section,
+    .floating-leaf,
+    #servicesDropdown,
+    .dropdown {
         display: none !important;
     }
 
-    /* Main content wrapper */
+    /* Main content */
     .main-content {
         position: relative;
         width: 100%;
-        margin-top: 60px; /* Height of navbar */
+        margin-top: 60px;
         background: #fff;
         z-index: 1;
         padding: 15px;
@@ -209,7 +204,7 @@ body {
         display: block !important;
     }
 
-    /* Individual sections */
+    /* Rest of your mobile styles */
     .advertisement-container,
     .project-section,
     .intro-section,
@@ -224,83 +219,11 @@ body {
         display: block !important;
     }
 
-    /* Advertisement widgets */
-    .ad-column {
-        width: 100%;
-    }
-
-    .ad-widget-large {
-        flex-direction: column;
-    }
-
-    .left-widget,
-    .right-widget {
-        width: 100%;
-    }
-
-    /* Project section */
-    .project-title,
-    .award-title {
-        text-align: center;
-    }
-
-    .image-widget-container {
-        width: 100%;
-        margin: 20px 0;
-    }
-
-    .image-widget {
-        width: 100%;
-    }
-
-    .text-overlay-widget {
-        position: relative;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    /* Options section */
-    .image-wid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* Feedback section */
-    .feedback-widgets {
-        flex-direction: column;
-    }
-
-    .feedback-widget {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    /* Footer */
-    footer {
-        position: relative;
-        width: 100%;
-        background: #333;
-        color: #fff;
-        padding: 20px;
-        z-index: 1;
-    }
-
-    .footer-container {
-        flex-direction: column;
-    }
-
-    /* Ensure all content is visible */
+    /* Ensure content visibility */
     .main-content *,
-    .advertisement-container *,
-    .project-section *,
-    .intro-section *,
-    .options-section *,
-    .feedback-section *,
-    .creds-section * {
+    .navbar * {
         visibility: visible !important;
         opacity: 1 !important;
-        display: block !important;
     }
 }
 
