@@ -4,6 +4,8 @@ body {
     padding: 0;
     overflow-x: hidden;
     width: 100%;
+    min-height: 100vh;
+    background: #fff;
 }
 
 .main-content {
@@ -11,16 +13,27 @@ body {
     position: relative;
     z-index: 1;
     background: #fff;
+    display: block !important; /* Force display */
+    visibility: visible !important; /* Force visibility */
 }
 
 /* Mobile styles - Add with your other media queries */
 @media screen and (max-width: 768px) {
-    .main-content {
-        padding-top: 60px; /* Height of mobile navbar */
+    .navbar {
+        position: fixed;
         width: 100%;
-        overflow-x: hidden;
+        z-index: 1000;
+        top: 0;
     }
 
+    .main-content {
+        margin-top: 60px; /* Changed from padding to margin */
+        width: 100%;
+        overflow-x: hidden;
+        display: block !important;
+    }
+
+    /* Force display on all major sections */
     .advertisement-container,
     .project-section,
     .intro-section,
@@ -30,14 +43,29 @@ body {
         width: 100%;
         padding: 15px;
         box-sizing: border-box;
-        display: block;
+        display: block !important;
         position: relative;
         z-index: 1;
+        visibility: visible !important;
+        opacity: 1 !important;
+        background: #fff;
     }
 
-    /* Hide decorative elements on mobile */
+    /* Ensure images are visible */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Hide decorative elements */
     .floating-leaf {
         display: none;
+    }
+
+    /* Reset any transforms */
+    * {
+        transform: none !important;
     }
 }
 
