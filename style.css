@@ -118,7 +118,11 @@ body, html, ul {
     gap: 20px;
     list-style: none;
 }
-
+.menu.desktop-menu ul li a.active,
+.sidenav ul li a.active {
+    background-color: #999;
+    border-radius: 5px;
+}
 .menu.desktop-menu ul li a {
     text-decoration: none;
     color: white;
