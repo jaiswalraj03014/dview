@@ -151,7 +151,104 @@ body, html, ul {
 }
 
 .sidenav {
+    height: 100vh; /* Full height */
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+.sidenav.active {
+    width: 250px;
+}
+
+.sidenav .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+}
+
+.sidenav ul {
+    list-style: none;
+    padding: 0;
+    margin: 60px 0 0 0; /* Add top margin to account for close button */
+}
+
+.sidenav ul li {
+    padding: 15px 25px;
+}
+
+.sidenav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: 0.3s;
+}
+
+/* Sidenav Contact Section */
+.sidenav-contact {
+    margin-top: auto; /* Push to bottom */
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #333;
+}
+
+.sidenav-contact h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-family: 'seasons', serif;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 0;
+}
+
+.contact-links a i {
+    font-size: 20px;
+    width: 24px;
+}
+
+.contact-links a span {
+    font-family: 'mont-reg', sans-serif;
+    color: white;
+}
+
+/* Dropdown in sidenav */
+.sidenav-dropdown {
     display: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.sidenav-dropdown.active {
+    display: block;
+}
+
+.sidenav-dropdown a {
+    padding: 10px 0;
 }
 
 /* Mobile Styles */
@@ -224,8 +321,6 @@ body, html, ul {
         list-style: none;
         padding: 0;
         margin: 0;
-        background-color: #333;
-
     }
 
     .sidenav ul li {
