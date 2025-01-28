@@ -383,6 +383,117 @@ menu.desktop-menu ul li a.active {
         font-size: 20px;
         width: 24px;
     }
+
+    .advertisement-container {
+        flex-direction: column;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .ad-column {
+        width: 100%;
+        margin: 0;
+    }
+
+    .ad-widget-large {
+        flex-direction: column;
+        width: 90%;
+        margin: 20px auto;
+        height: auto;
+    }
+
+    .left-widget {
+        width: 100%;
+        height: 200px;
+    }
+
+    .left-widget img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .right-widget {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .ad-heading {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+
+    .ad-subheading {
+        font-size: 40px;
+        margin-top: 0;
+    }
+
+    .ad-desp {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .ad-button {
+        margin: 15px auto;
+        padding: 10px 25px;
+    }
+
+    .ad-widget-small {
+        width: 90%;
+        margin: 20px auto;
+        height: auto;
+    }
+
+    .ad-widget-medium {
+        width: 90%;
+        margin: 20px auto;
+        height: auto;
+    }
+
+    .ad-logo {
+        width: 80px;
+        margin: 10px 0;
+    }
+
+    .ad-line {
+        font-size: 18px;
+    }
+
+    .ad-description {
+        font-size: 14px;
+    }
+
+    .ad-description-last {
+        font-size: 20px;
+    }
+
+    .ad-button-1 {
+        margin: 15px auto;
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    .ad-widget-large,
+    .ad-widget-small,
+    .ad-widget-medium {
+        width: 95%;
+    }
+
+    .ad-heading {
+        font-size: 25px;
+    }
+
+    .ad-subheading {
+        font-size: 35px;
+    }
+
+    .left-widget {
+        height: 180px;
+    }
 }
 
 /* Dropdown Styles */
@@ -1190,190 +1301,249 @@ menu.desktop-menu ul li a.active {
 /* Advertisement Widgets */
 /* Main Advertisement Container */
 .advertisement-container {
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: flex; /* Flexbox layout */
+    gap: 1rem; /* Space between containers */
+    margin: 2rem 0;
+    z-index: 3;
 }
 
-/* Ad Column */
+/* Column for Large and Small Widgets */
 .ad-column {
-    flex: 1;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    min-width: 300px;
+    flex-direction: column; /* Stack children vertically */
+    gap: 1rem; /* Space between stacked widgets */
+    flex: 1; /* Allow the column to take up available space */
+    width: 60vh;
+    z-index: 3;
 }
 
 /* Large Widget */
 .ad-widget-large {
-    background: #fff;
-    border-radius: 15px;
+    background-color: #e8f4f8;
+    border-radius: 30px;
     display: flex;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'seasons', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    height: 300px;
+    margin-top: 7%;
+    margin-bottom: 2%;
+    margin-left: 7%;/* Fixed height */
+    background: url(/Users/aakashjaiswal/Desktop/dview/UI:UX/bg_large_2.png);
+    background-size: cover;
+    z-index: 3;
 }
-
 .left-widget {
-    flex: 1;
-    min-width: 50%;
+    flex: 0 0 50%; /* Fixed width of 55% */
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center the image vertically */
 }
 
 .left-widget img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 70%; /* Image fills the left widget */
+    height: auto;
+    object-fit: cover; /* Ensure the image doesn't distort */
+    border-radius: 0;
 }
 
+/* Right Widget: Takes up 45% and stacks content in a column */
 .right-widget {
-    flex: 1;
-    padding: 30px;
+    flex: 0 0 50%; /* Fixed width of 45% */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 20px;
+    
 }
 
+/* Styling for Right Widget Content */
 .ad-heading {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    font-family: 'seasons', serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: #333;
+    font-family: 'FAIR-b';
+    font-weight: 500;
 }
 
 .ad-subheading {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #666;
+    margin-top: 0px;
+    font-size: 50px;
+    color: #ff6100;
+    margin-bottom: 2px;
 }
 
 .ad-desp {
-    margin-bottom: 30px;
-    line-height: 1.6;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 8px;
+    margin-top: 0px;
+    text-align: start;
+    font-family: 'mont-reg';
+
 }
 
 .ad-button {
-    padding: 12px 30px;
-    background: #333;
-    color: white;
+    background-color: black;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
     border: none;
-    border-radius: 25px;
+    border-radius: 10px;
     cursor: pointer;
-    align-self: flex-start;
-    transition: background 0.3s ease;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    align-self: self-end;
+    margin-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-weight: bold;
 }
 
 .ad-button:hover {
-    background: #555;
+    background-color: #242424;
 }
-
 /* Small Widget */
 .ad-widget-small {
-    background: #fff;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Medium Widget */
-.ad-widget-medium {
-    flex: 1;
-    min-width: 300px;
-    background: #fff;
-    border-radius: 15px;
-    padding: 20px;
+    background:url(/Users/aakashjaiswal/Desktop/dview/UI:UX/SMALL_BG.png);
+    object-fit:fill;
+    background-position: 50% 40%;
+    background-size: cover;
+    border-radius: 30px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: 'seasons', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    height: 200px; /* Fixed height */
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 7%;
+    flex-direction: column;
+    z-index: 3;
 }
 
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
-    .advertisement-container {
-        padding: 10px;
-        flex-direction: column;
-    }
+.small-image{
+    width: 100%; /* Full width for the image */
+    height: auto;
+    margin-top: 4% ;
+    margin-bottom: 1px;
+    border-radius: 8px;
+}
+.adsense-line{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 1px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: 'itc-reg';
+    letter-spacing: 1px;
+}
+.adsense-title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0px;
+    color: #ff9900;
+    font-family: 'amb';
+    letter-spacing: 1px;
+}
+/* Medium Widget (in separate container) */
+/* Medium Widget (in separate container) */
+.ad-widget-medium {
+    background-color: black;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'seasons', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    height: auto; /* Adjust height to content */
+    width: 20%; /* Set to a smaller width */
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-left: 2%;
+    flex-direction: column; 
+}
+.ad-div{
+text-align: start;
+padding-left: -10%;
 
-    .ad-widget-large {
-        flex-direction: column;
-    }
-
-    .left-widget {
-        height: 200px;
-    }
-
-    .right-widget {
-        padding: 20px;
-        text-align: center;
-    }
-
-    .ad-heading {
-        font-size: 2em;
-    }
-
-    .ad-subheading {
-        font-size: 1.5em;
-    }
-
-    .ad-button {
-        align-self: center;
-    }
-
-    .ad-widget-small {
-        padding: 15px;
-    }
-
-    .ad-widget-medium {
-        padding: 15px;
-    }
-
-    /* Adjust image sizes for mobile */
-    .small-image img {
-        max-width: 80%;
-        height: auto;
-    }
-
-    .ad-logo {
-        max-width: 60%;
-        height: auto;
-    }
-
-    /* Text adjustments for mobile */
-    .adsense-line {
-        font-size: 1.2em;
-    }
-
-    .adsense-title {
-        font-size: 1.8em;
-    }
-
-    .ad-line {
-        font-size: 1.5em;
-    }
-
-    .ad-description,
-    .ad-description-last {
-        font-size: 1em;
-    }
 }
 
-/* Additional adjustments for very small screens */
-@media screen and (max-width: 480px) {
-    .ad-heading {
-        font-size: 1.8em;
-    }
+.ad-logo {
+    width: 100px; /* Set logo width */
+    height: auto;
+    margin-bottom: 5px;
+}
 
-    .ad-subheading {
-        font-size: 1.3em;
-    }
+.ad-line {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: white;
+    font-family: 'lastica';
+    letter-spacing: 3px;
+}
 
-    .ad-desp {
-        font-size: 0.9em;
-    }
+.ad-image {
+    width: 100%; /* Full width for the image */
+    height: auto;
+    margin: 15px 0;
+    border-radius: 8px;
+}
 
-    .left-widget {
-        height: 150px;
-    }
+.ad-description {
+    font-size: 12px;
+    color: white;
+    margin: 10px 0;
+    text-align: start;
+    font-family: 'mont-reg';
+    letter-spacing: 2px;
+    align-self: self-start;
+}
+.ad-description-last {
+    font-size: 25px;
+    color: rgb(255, 107, 15);
+    margin: 10px 0;
+    margin-top: 2px;
+    text-align: start;
+    font-family: 'lastica';
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.ad-button-1 {
+    
+    background-color: white;
+    color:black;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    align-items: end;
+    margin-top: 10px;
+}
+
+.ad-button-1:hover {
+    background-color: rgb(222, 222, 222);
 }
 
 /* General Footer Styling */
