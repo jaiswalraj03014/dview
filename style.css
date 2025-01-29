@@ -106,26 +106,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px; /* Reduced padding */
+    padding: 0 50px; /* Increased padding */
 }
 
-/* Logo styles */
 .logo {
     height: 50px;
-    margin-right: auto; /* Push logo to the left */
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
     height: 100%;
     width: auto;
-    display: block;
 }
 
-/* Desktop menu styles */
+/* Desktop Menu */
 .menu.desktop-menu {
-    position: absolute; /* Position in center */
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     align-items: center;
 }
@@ -133,7 +129,7 @@ body {
 .menu.desktop-menu ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 30px; /* Increased gap */
     margin: 0;
     padding: 0;
 }
@@ -147,12 +143,10 @@ body {
     transition: all 0.3s ease;
     font-family: 'seasons', serif;
     font-weight: 500;
-    white-space: nowrap; /* Prevent text wrapping */
 }
 
-/* Right section styles */
+/* Right Section */
 .right-section.desktop-only {
-    margin-left: auto; /* Push to the right */
     display: flex;
     align-items: center;
     gap: 20px;
@@ -1745,17 +1739,25 @@ img {
     }
 
     .hamburger-btn {
-        display: block !important;
-        position: fixed;
+        position: absolute;
         left: 15px;
         top: 50%;
         transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
         z-index: 1001;
+        padding: 10px;
+        display: block;
     }
 
     .hamburger-btn span {
-        display: block !important;
-        background-color: white !important;
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.3s;
     }
 
     .hamburger-btn.active span:nth-child(1) {
@@ -1870,106 +1872,4 @@ img {
 
 .services-link.active i {
     transform: rotate(180deg);
-}
-
-/* Hide hamburger in desktop */
-.hamburger-btn {
-    display: none; /* Hide by default */
-}
-
-/* Mobile Navigation Styles */
-@media screen and (max-width: 768px) {
-    /* Existing hamburger styles */
-    .hamburger-btn {
-        display: block !important;
-        position: fixed;
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1001;
-        background: transparent;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    .hamburger-btn span {
-        display: block !important;
-        width: 25px;
-        height: 3px;
-        background-color: white !important;
-        margin: 5px 0;
-        transition: 0.3s;
-    }
-
-    /* Mobile Nav */
-    .mobile-nav {
-        position: fixed;
-        top: 60px;
-        left: -250px;
-        width: 250px;
-        height: calc(100vh - 60px);
-        background-color: #333;
-        transition: all 0.3s ease-in-out;
-        z-index: 999;
-        overflow-y: auto;
-        visibility: visible;
-        opacity: 1;
-    }
-
-    .mobile-nav.active {
-        left: 0;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-    }
-
-    .mobile-nav nav {
-        padding: 20px 0;
-    }
-
-    .mobile-nav a {
-        display: block;
-        padding: 15px 25px;
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        transition: 0.3s;
-        font-family: 'seasons', serif;
-    }
-
-    .mobile-nav a:hover,
-    .mobile-nav a.active {
-        background-color: rgba(255,255,255,0.1);
-    }
-
-    /* Mobile contact section */
-    .mobile-contact {
-        padding: 20px 25px;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        margin-top: 20px;
-    }
-
-    .mobile-contact a {
-        padding: 10px 0;
-    }
-
-    .mobile-contact i {
-        margin-right: 10px;
-    }
-
-    /* Hide desktop elements */
-    .menu.desktop-menu,
-    .right-section.desktop-only {
-        display: none !important;
-    }
-
-    /* Adjust navbar for mobile */
-    .navbar {
-        height: 60px;
-        padding: 0 15px;
-        justify-content: center;
-    }
-
-    .logo {
-        margin: 0 auto;
-    }
 }
