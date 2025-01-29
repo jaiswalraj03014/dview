@@ -194,13 +194,17 @@ body {
         z-index: 1000;
     }
 
-    .logo {
+   .logo {
+        position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        top: 50%;
+        transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+        height: 70px; /* Keep same size in mobile */
     }
 
     .logo img {
-        height: 70px;
+        height: 70px; /* Explicit height for mobile */
+        display: block;
     }
 
     /* Hide desktop elements */
