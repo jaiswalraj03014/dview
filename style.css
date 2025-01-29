@@ -113,7 +113,7 @@ body {
 .logo {
     position: absolute;
     left: 30px;
-    height: 50px;
+    height: 120px;
     z-index: 1002; /* Higher than hamburger */
 }
 
@@ -207,6 +207,7 @@ body {
         height: 100%;
         width: auto;
         display: block !important;
+        width: 70px;
     }
 
     /* Hide desktop elements */
