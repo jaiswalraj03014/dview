@@ -1876,3 +1876,100 @@ img {
 .hamburger-btn {
     display: none; /* Hide by default */
 }
+
+/* Mobile Navigation Styles */
+@media screen and (max-width: 768px) {
+    /* Existing hamburger styles */
+    .hamburger-btn {
+        display: block !important;
+        position: fixed;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+        background: transparent;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .hamburger-btn span {
+        display: block !important;
+        width: 25px;
+        height: 3px;
+        background-color: white !important;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    /* Mobile Nav */
+    .mobile-nav {
+        position: fixed;
+        top: 60px;
+        left: -250px;
+        width: 250px;
+        height: calc(100vh - 60px);
+        background-color: #333;
+        transition: all 0.3s ease-in-out;
+        z-index: 999;
+        overflow-y: auto;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .mobile-nav.active {
+        left: 0;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    }
+
+    .mobile-nav nav {
+        padding: 20px 0;
+    }
+
+    .mobile-nav a {
+        display: block;
+        padding: 15px 25px;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.3s;
+        font-family: 'seasons', serif;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    /* Mobile contact section */
+    .mobile-contact {
+        padding: 20px 25px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        margin-top: 20px;
+    }
+
+    .mobile-contact a {
+        padding: 10px 0;
+    }
+
+    .mobile-contact i {
+        margin-right: 10px;
+    }
+
+    /* Hide desktop elements */
+    .menu.desktop-menu,
+    .right-section.desktop-only {
+        display: none !important;
+    }
+
+    /* Adjust navbar for mobile */
+    .navbar {
+        height: 60px;
+        padding: 0 15px;
+        justify-content: center;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+}
