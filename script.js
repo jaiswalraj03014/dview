@@ -202,3 +202,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Make function available globally
     window.toggleDropdown = toggleDropdown;
 });
+
+function toggleSidenav() {
+    const sidenav = document.querySelector('.sidenav');
+    const hamburger = document.querySelector('.hamburger-menu');
+    
+    sidenav.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}
+
+// Close sidenav when clicking outside
+document.addEventListener('click', function(event) {
+    const sidenav = document.querySelector('.sidenav');
+    const hamburger = document.querySelector('.hamburger-menu');
+    
+    if (!sidenav.contains(event.target) && !hamburger.contains(event.target) && sidenav.classList.contains('active')) {
+        sidenav.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+});
