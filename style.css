@@ -110,9 +110,10 @@ body {
 }
 
 .logo {
+    position: absolute;
+    left: 30px;
     height: 50px;
-    display: flex;
-    align-items: center;
+    z-index: 1002;
 }
 
 .logo img {
@@ -194,14 +195,12 @@ body {
     }
 
     .logo {
-        height: 40px;
-        display: block !important;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .logo img {
-        height: 100%;
-        width: auto;
-        display: block !important;
+        height: 55px;
     }
 
     /* Hide desktop elements */
