@@ -90,79 +90,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger-menu');
-    const sidenav = document.querySelector('.sidenav');
-    
-    if (!hamburger || !sidenav) {
-        console.error('Required elements not found');
-        return;
-    }
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
 
-    // Toggle sidenav
-    function toggleSidenav(e) {
-        e.stopPropagation();
-        sidenav.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    }
+    if (hamburgerBtn && mobileNav) {
+        hamburgerBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
 
-    // Add click event to hamburger
-    hamburger.addEventListener('click', toggleSidenav);
-
-    // Close sidenav when clicking outside
-    document.addEventListener('click', function(e) {
-        if (sidenav.classList.contains('active') && 
-            !sidenav.contains(e.target) && 
-            !hamburger.contains(e.target)) {
-            sidenav.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
-    });
-
-    // Prevent sidenav clicks from closing
-    sidenav.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth <= 768) {
-            mainContent.style.marginTop = '60px';
-            mainContent.style.display = 'block';
-            mainContent.style.position = 'relative';
-            mainContent.style.zIndex = '1';
-        } else {
-            // Reset styles for desktop view
-            mainContent.style = '';
-        }
-    });
-
-    // Initial setup for mobile
-    if (window.innerWidth <= 768) {
-        mainContent.style.marginTop = '60px';
-        mainContent.style.display = 'block';
-        mainContent.style.position = 'relative';
-        mainContent.style.zIndex = '1';
-    }
-
-    // Ensure content is visible
-    document.body.style.display = 'block';
-    
-    // Handle dropdown toggle
-    function toggleDropdown(event, dropdownId, arrowId) {
-        event.preventDefault();
-        const dropdown = document.getElementById(dropdownId);
-        const arrow = document.getElementById(arrowId);
-        
-        if (dropdown) {
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-            if (arrow) {
-                arrow.style.transform = dropdown.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0)';
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                hamburgerBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
             }
-        }
-    }
+        });
 
-    // Make function available globally
-    window.toggleDropdown = toggleDropdown;
+        // Prevent clicks inside nav from closing
+        mobileNav.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
 });
 
 function toggleSidenav() {
