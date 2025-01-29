@@ -7,7 +7,7 @@
     <!-- Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fa-regular.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="dashboard.css"> <!-- Link to external CSS -->
 </head>
 <body>
     <!-- Navbar Section -->
@@ -21,7 +21,7 @@
 
         <!-- Logo -->
         <div class="logo">
-            <img src="/dview_logo_nobg.png" alt="Logo">
+            <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/dview_logo_nobg.png" alt="Logo">
         </div>
 
         <!-- Desktop Menu -->
@@ -30,8 +30,8 @@
                 <li><a href="#" class="active">Showroom</a></li>
                 <li><a href="projects.html">Project</a></li>
                 <li>
-                    <a href="#" onclick="toggleDropdown(event, 'servicesDropdown', 'servicesArrow')">
-                        Services <i id="servicesArrow" class="fas fa-chevron-down"></i>
+                    <a href="#" class="services-link">
+                        Services <i class="fas fa-chevron-down"></i>
                     </a>
                 </li>
                 <li><a href="aboutus.html">About</a></li>
@@ -317,24 +317,26 @@
    
     <!-- Dropdown Sections -->
 
-    <div id="servicesDropdown" class="dropdown" >
-        <div class="dropdown-column">
-            <h3>Consultation</h3>
-            <a href="#">Option A</a>
-            <a href="#">Option B</a>
-            <a href="#">Option C</a>
-        </div>
-        <div class="dropdown-column">
-            <h3>Design Services</h3>
-            <a href="#">Option D</a>
-            <a href="#">Option E</a>
-            <a href="#">Option F</a>
-        </div>
-        <div class="dropdown-column">
-            <h3>Project Management</h3>
-            <a href="#">Option G</a>
-            <a href="#">Option H</a>
-            <a href="#">Option I</a>
+    <div id="servicesDropdown" class="services-dropdown">
+        <div class="dropdown-content">
+            <div class="dropdown-column">
+                <h3>Design Services</h3>
+                <a href="#">Interior Design</a>
+                <a href="#">Architectural Design</a>
+                <a href="#">Space Planning</a>
+            </div>
+            <div class="dropdown-column">
+                <h3>Consultation</h3>
+                <a href="#">Color Consultation</a>
+                <a href="#">Material Selection</a>
+                <a href="#">Lighting Design</a>
+            </div>
+            <div class="dropdown-column">
+                <h3>Implementation</h3>
+                <a href="#">Project Management</a>
+                <a href="#">Construction</a>
+                <a href="#">Renovation</a>
+            </div>
         </div>
     </div>
    
