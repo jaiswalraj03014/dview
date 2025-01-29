@@ -90,26 +90,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Navigation
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileNav = document.getElementById('mobileNav');
 
     if (hamburgerBtn && mobileNav) {
-        hamburgerBtn.addEventListener('click', function() {
+        hamburgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
             this.classList.toggle('active');
             mobileNav.classList.toggle('active');
         });
 
-        // Close menu when clicking outside
+        // Close mobile nav when clicking outside
         document.addEventListener('click', function(e) {
             if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
                 hamburgerBtn.classList.remove('active');
                 mobileNav.classList.remove('active');
             }
         });
+    }
 
-        // Prevent clicks inside nav from closing
-        mobileNav.addEventListener('click', function(e) {
-            e.stopPropagation();
+    // Services Dropdown
+    const servicesLink = document.querySelector('a[href="#"][onclick*="toggleDropdown"]');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+
+    if (servicesLink && servicesDropdown) {
+        servicesLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            servicesDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!servicesLink.contains(e.target) && !servicesDropdown.contains(e.target)) {
+                servicesDropdown.classList.remove('show');
+            }
         });
     }
 });
