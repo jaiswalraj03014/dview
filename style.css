@@ -1746,10 +1746,9 @@ img {
 
     .hamburger-btn {
         display: block; /* Show only in mobile */
-        position: absolute;
+        position: fixed;
         left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 15px;
         background: none;
         border: none;
         cursor: pointer;
