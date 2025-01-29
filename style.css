@@ -110,7 +110,7 @@ body {
 }
 
 .logo {
-    height: 120px;
+    height: 50px;
 }
 
 .logo img {
@@ -189,7 +189,7 @@ body {
     }
 
     .logo {
-        height: 70px;
+        height: 40px;
         display: block !important;
     }
 
@@ -487,78 +487,53 @@ body {
     }
 }
 
-/* Dropdown Styles */
+/* Desktop Dropdown Styles */
 .dropdown {
-    display: block;
     position: absolute;
-    top: 8%;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    padding: 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    top: 80px; /* Height of navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    min-width: 800px;
+    display: none;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 999;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
-.dropdown.show {
-    max-height: 500px;
-    padding: 20px 0;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 5px;
+/* Dropdown columns */
+.dropdown-column {
+    float: left;
+    width: 33.33%;
+    padding: 10px 20px;
 }
 
-.dropdown.closing {
-    max-height: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
+.dropdown-column h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
 }
 
-/* Dropdown Columns */
-.dropdown .dropdown-column {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    margin: 10px;
-}
-
-.dropdown.show .dropdown-column {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Dropdown Links */
-.dropdown .dropdown-column h3 {
-    margin: 0 0 10px 0;
-    font-size: 15px;
-    color: #707e5a;
-    font-family: sans-serif;
-    font-weight: 200;
-    text-transform: uppercase;
-}
-
-.dropdown .dropdown-column a {
+.dropdown-column a {
+    display: block;
+    color: #666;
+    padding: 8px 0;
     text-decoration: none;
-    color: black;
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: 0.3s;
 }
 
-.dropdown .dropdown-column a:hover {
-    background-color: #ffe8cf;
-    transform: scale(1.05);
-    border-radius: 5px;
+.dropdown-column a:hover {
+    color: #333;
+}
+
+/* Show dropdown */
+.dropdown.show {
+    display: block;
+}
+
+/* Desktop Menu Item with Dropdown */
+.menu.desktop-menu ul li {
+    position: relative;
 }
 
 /* Specific styles for email and contact icons */
