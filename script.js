@@ -90,16 +90,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileNav = document.getElementById('mobileNav');
+    const body = document.body;
 
-    // Only add mobile navigation listeners if elements exist
     if (hamburgerBtn && mobileNav) {
         hamburgerBtn.addEventListener('click', function(e) {
-            if (e && e.stopPropagation) e.stopPropagation();
+            e.stopPropagation();
             this.classList.toggle('active');
             mobileNav.classList.toggle('active');
+            body.classList.toggle('nav-open');
+        });
+
+        // Close nav when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                hamburgerBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
+                body.classList.remove('nav-open');
+            }
+        });
+
+        // Prevent nav closing when clicking inside
+        mobileNav.addEventListener('click', function(e) {
+            e.stopPropagation();
         });
     }
 
