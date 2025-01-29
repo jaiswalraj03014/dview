@@ -113,8 +113,8 @@ body {
 .logo {
     position: absolute;
     left: 30px;
-    height: 120px;
-    z-index: 1002; /* Higher than hamburger */
+    height: 50px;
+    z-index: 1002;
 }
 
 .logo img {
@@ -197,17 +197,21 @@ body {
         display: block !important;
     }
 
+    /* Increased logo size for mobile */
     .logo {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        height: 45px; /* Increased height */
+        display: flex;
+        align-items: center;
     }
 
     .logo img {
-        height: 80%;
+        height: 100%;
         width: auto;
-        display: block !important;
-        width: 80%;
+        max-height: 45px; /* Ensure consistent height */
+        object-fit: contain; /* Maintain aspect ratio */
     }
 
     /* Hide desktop elements */
