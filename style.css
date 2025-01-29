@@ -106,22 +106,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px; /* Increased padding */
+    padding: 0 30px; /* Reduced padding */
 }
 
+/* Logo styles */
 .logo {
     height: 50px;
-    display: flex;
-    align-items: center;
+    margin-right: auto; /* Push logo to the left */
 }
 
 .logo img {
     height: 100%;
     width: auto;
+    display: block;
 }
 
-/* Desktop Menu */
+/* Desktop menu styles */
 .menu.desktop-menu {
+    position: absolute; /* Position in center */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
 }
@@ -129,7 +133,7 @@ body {
 .menu.desktop-menu ul {
     display: flex;
     list-style: none;
-    gap: 30px; /* Increased gap */
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
@@ -143,10 +147,12 @@ body {
     transition: all 0.3s ease;
     font-family: 'seasons', serif;
     font-weight: 500;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-/* Right Section */
+/* Right section styles */
 .right-section.desktop-only {
+    margin-left: auto; /* Push to the right */
     display: flex;
     align-items: center;
     gap: 20px;
