@@ -204,10 +204,10 @@ body {
     }
 
     .logo img {
-        height: 100%;
+        height: 80%;
         width: auto;
         display: block !important;
-        width: 100%;
+        width: 80%;
     }
 
     /* Hide desktop elements */
