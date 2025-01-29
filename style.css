@@ -94,7 +94,7 @@ body {
     font-style: italic;
     font-weight: normal;
 }
-/* Navbar */
+/* Navbar base styles */
 .navbar {
     position: fixed;
     top: 0;
@@ -106,22 +106,28 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px; /* Increased padding */
+    padding: 0 50px;
 }
 
+/* Logo styles */
 .logo {
+    position: absolute;
+    left: 30px;
     height: 50px;
-    display: flex;
-    align-items: center;
+    z-index: 1002; /* Higher than hamburger */
 }
 
 .logo img {
     height: 100%;
     width: auto;
+    display: block;
 }
 
-/* Desktop Menu */
+/* Desktop menu styles */
 .menu.desktop-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
 }
@@ -129,7 +135,7 @@ body {
 .menu.desktop-menu ul {
     display: flex;
     list-style: none;
-    gap: 30px; /* Increased gap */
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
@@ -143,10 +149,13 @@ body {
     transition: all 0.3s ease;
     font-family: 'seasons', serif;
     font-weight: 500;
+    white-space: nowrap;
 }
 
-/* Right Section */
+/* Right section styles */
 .right-section.desktop-only {
+    position: absolute;
+    right: 30px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -180,22 +189,18 @@ body {
 
     /* Navbar mobile */
     .navbar {
-        height: 60px;
         padding: 0 15px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #333;
-        z-index: 1000;
+        height: 60px;
+    }
+
+    .hamburger-btn {
+        display: block !important;
     }
 
     .logo {
-        height: 40px;
-        display: block !important;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .logo img {
@@ -411,38 +416,6 @@ body {
     .sidenav-contact a {
         padding: 10px;
         font-size: 20px;
-    }
-
-    /* Navbar adjustments */
-    .navbar {
-        justify-content: center;
-        padding: 0 15px;
-    }
-
-    .logo {
-        margin: 0 auto;
-    }
-
-    /* Hamburger Button */
-    .hamburger-btn {
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1001;
-        padding: 10px;
-    }
-
-    .hamburger-btn span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        margin: 5px 0;
-        transition: 0.3s;
     }
 
     /* Mobile Navigation */
