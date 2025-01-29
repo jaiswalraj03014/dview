@@ -120,13 +120,14 @@ body {
 
 /* Desktop Menu */
 .menu.desktop-menu {
-    display: block;
+    display: flex;
+    align-items: center;
 }
 
 .menu.desktop-menu ul {
     display: flex;
-    gap: 20px;
     list-style: none;
+    gap: 20px;
 }
 
 .menu.desktop-menu ul li a {
@@ -134,7 +135,7 @@ body {
     color: white;
     font-size: 20px;
     padding: 6px 10px;
-    line-height: 70px;
+    line-height: 80px;
     transition: all 0.3s ease;
     font-family: 'seasons', serif;
     font-weight: 500;
@@ -1676,4 +1677,127 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* Services Dropdown */
+#servicesDropdown {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: none;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+#servicesDropdown.show {
+    display: block;
+}
+
+.dropdown-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.dropdown-column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.dropdown-column h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.dropdown-column a {
+    display: block;
+    color: #666;
+    padding: 8px 0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.dropdown-column a:hover {
+    color: #333;
+}
+
+/* Mobile Navigation */
+@media screen and (max-width: 768px) {
+    .navbar {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    .hamburger-btn {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 10px;
+        display: block;
+    }
+
+    .hamburger-btn span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    .hamburger-btn.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-btn.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .mobile-nav {
+        position: fixed;
+        top: 60px;
+        left: -250px;
+        width: 250px;
+        height: calc(100vh - 60px);
+        background-color: #333;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    .mobile-nav.active {
+        left: 0;
+    }
+
+    .mobile-nav nav {
+        padding: 20px 0;
+    }
+
+    .mobile-nav a {
+        display: block;
+        padding: 15px 25px;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    .menu.desktop-menu,
+    #servicesDropdown {
+        display: none !important;
+    }
 }
