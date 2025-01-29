@@ -2002,7 +2002,8 @@ img {
         height: auto;
         margin: 5px auto; /* Center horizontally */
         display: block; /* Ensure block display */
-        margin-top: 10px;
+        gap: 20px;
+        
     }
 
     .footer-credentials-line {
