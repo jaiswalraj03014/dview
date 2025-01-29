@@ -1271,10 +1271,9 @@ body {
 /* Advertisement Widgets */
 /* Main Advertisement Container */
 .advertisement-container {
-    display: flex; /* Flexbox layout */
-    gap: 1rem; /* Space between containers */
-    margin: 2rem 0;
-    z-index: 3;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
 }
 
 /* Column for Large and Small Widgets */
@@ -1668,10 +1667,75 @@ footer {
 
     .advertisement-container {
         flex-direction: column;
+        padding: 15px;
+        gap: 30px;
     }
 
-    .ad-widget-large, .ad-widget-small {
+    .ad-column {
         width: 100%;
+    }
+
+    /* Large widget mobile layout */
+    .ad-widget-large {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .left-widget {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .left-widget img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .right-widget {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .ad-heading {
+        margin: 15px 0;
+    }
+
+    .ad-subheading {
+        margin: 10px 0;
+    }
+
+    .ad-desp {
+        margin: 15px 0;
+    }
+
+    .ad-button {
+        margin: 20px auto;
+        display: block;
+    }
+
+    /* Medium widget mobile layout */
+    .ad-widget-medium {
+        width: 100%;
+        height: 60vh; /* Takes 60% of viewport height */
+        margin-bottom: 20px;
+    }
+
+    /* Small widget mobile layout */
+    .ad-widget-small {
+        width: 100%;
+        height: 40vh; /* Takes 40% of viewport height */
+    }
+
+    /* Ensure images fit properly */
+    .ad-widget-medium img,
+    .ad-widget-small img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
