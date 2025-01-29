@@ -1969,44 +1969,33 @@ img {
         width: 100%;
     }
 
+    .footer-credentials-line {
+        margin: 10px 0 25px 0; /* Increased bottom margin to 25px */
+    }
+
     .footer-credentials-content {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
-    }
-
-    .footer-credentials-left p {
-        font-size: 12px; /* Smaller copyright text */
-        margin: 0;
+        gap: 20px; /* Increased gap */
     }
 
     .footer-credentials-right {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%; /* Full width to ensure center alignment */
-    }
-
-    .footer-credentials-right img {
-        margin: 0 auto; /* Center the image */
-        display: block; /* Ensure block display */
+        width: 100%;
+        margin-top: 15px; /* Added top margin */
     }
 
     .footer-credentials-right p {
-        font-size: 11px; /* Smaller credits text */
-        margin: 0;
+        font-size: 11px;
+        margin: 0 0 15px 0; /* Added bottom margin */
     }
 
     .footer-credentials-logo {
         width: 120px;
         height: auto;
-        margin: 5px auto; /* Center horizontally */
-        display: block; /* Ensure block display */
-        gap: 20px;
-        
-    }
-
-    .footer-credentials-line {
-        margin: 10px 0;
+        margin: 10px auto; /* Increased vertical margin */
+        display: block;
     }
 }
