@@ -1745,24 +1745,17 @@ img {
     }
 
     .hamburger-btn {
-        display: block; /* Show only in mobile */
+        display: block !important;
         position: fixed;
         left: 15px;
-        top: 15px;
-        background: none;
-        border: none;
-        cursor: pointer;
+        top: 50%;
+        transform: translateY(-50%);
         z-index: 1001;
-        padding: 10px;
     }
 
     .hamburger-btn span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        margin: 5px 0;
-        transition: 0.3s;
+        display: block !important;
+        background-color: white !important;
     }
 
     .hamburger-btn.active span:nth-child(1) {
