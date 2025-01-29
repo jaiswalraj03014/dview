@@ -332,11 +332,12 @@ body {
     /* Hamburger menu */
     .hamburger-menu {
         display: block;
-        position: fixed;
-        top: 15px;
+        position: absolute;
         left: 15px;
-        z-index: 1001;
+        top: 50%;
+        transform: translateY(-50%);
         cursor: pointer;
+        z-index: 1001;
     }
 
     .hamburger-line {
@@ -344,11 +345,11 @@ body {
         height: 3px;
         background-color: white;
         margin: 5px 0;
+        transition: 0.3s;
         display: block;
-        transition: 0.4s;
     }
 
-    /* Hamburger animation */
+    /* Active Hamburger Animation */
     .hamburger-menu.active .hamburger-line:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
@@ -361,10 +362,60 @@ body {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    /* Adjust navbar for hamburger */
+    /* Sidenav */
+    .sidenav {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        top: 60px;
+        left: -250px;
+        background-color: #333;
+        overflow-x: hidden;
+        transition: 0.3s;
+        z-index: 999;
+        padding-top: 20px;
+    }
+
+    .sidenav.active {
+        left: 0;
+    }
+
+    .sidenav a {
+        padding: 15px 25px;
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+        font-family: 'seasons', serif;
+    }
+
+    .sidenav a:hover {
+        background-color: #444;
+    }
+
+    .sidenav-contact {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .sidenav-contact a {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    /* Navbar adjustments */
     .navbar {
         justify-content: center;
-        padding-left: 50px; /* Make space for hamburger */
+        padding: 0 15px;
+    }
+
+    .logo {
+        margin: 0 auto;
     }
 }
 
