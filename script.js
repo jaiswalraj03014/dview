@@ -90,69 +90,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    // Get elements
+    const hamburger = document.querySelector('.hamburger-menu');
     const sidenav = document.querySelector('.sidenav');
     const closeBtn = document.querySelector('.close-btn');
     const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
     const mainContent = document.querySelector('.advertisement-container');
 
-    // Toggle sidenav and adjust content
-    hamburgerMenu.addEventListener('click', function(e) {
-        e.stopPropagation();
-        sidenav.classList.add('active');
-        hamburgerMenu.style.display = 'none';
-        
-        // Ensure main content is visible but pushed down
-        if (window.innerWidth <= 768) {
-            mainContent.style.marginTop = '60px';
-            mainContent.style.display = 'block';
-            mainContent.style.position = 'relative';
-            mainContent.style.zIndex = '1';
-        }
-    });
-
-    // Close sidenav and readjust content
-    closeBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        sidenav.classList.remove('active');
-        hamburgerMenu.style.display = 'block';
-        
-        // Reset main content position
-        if (window.innerWidth <= 768) {
-            mainContent.style.marginTop = '60px';
-            mainContent.style.display = 'block';
-            mainContent.style.position = 'relative';
-            mainContent.style.zIndex = '1';
-        }
-    });
-
-    // Handle dropdown toggles in sidenav
-    dropdownTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const dropdown = this.nextElementSibling;
-            dropdown.classList.toggle('active');
-            
-            const icon = this.querySelector('i');
-            icon.classList.toggle('fa-chevron-down');
-            icon.classList.toggle('fa-chevron-up');
-        });
+    // Toggle sidenav when hamburger is clicked
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent event bubbling
+        sidenav.classList.toggle('active');
+        hamburger.classList.toggle('active');
     });
 
     // Close sidenav when clicking outside
     document.addEventListener('click', function(e) {
-        if (!sidenav.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+        if (!sidenav.contains(e.target) && !hamburger.contains(e.target)) {
             sidenav.classList.remove('active');
-            hamburgerMenu.style.display = 'block';
-            
-            // Reset main content position
-            if (window.innerWidth <= 768) {
-                mainContent.style.marginTop = '60px';
-                mainContent.style.display = 'block';
-                mainContent.style.position = 'relative';
-                mainContent.style.zIndex = '1';
-            }
+            hamburger.classList.remove('active');
         }
     });
 
