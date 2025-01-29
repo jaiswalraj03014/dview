@@ -2000,7 +2000,7 @@ img {
     .footer-credentials-logo {
         width: 120px;
         height: auto;
-        margin: 5px auto; /* Center horizontally */
+        margin: 10px auto; /* Center horizontally */
         display: block; /* Ensure block display */
     }
 
