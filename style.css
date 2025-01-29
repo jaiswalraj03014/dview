@@ -2000,8 +2000,9 @@ img {
     .footer-credentials-logo {
         width: 120px;
         height: auto;
-        margin: 10px auto; /* Center horizontally */
+        margin: 5px auto; /* Center horizontally */
         display: block; /* Ensure block display */
+        margin-top: 10px;
     }
 
     .footer-credentials-line {
