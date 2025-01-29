@@ -1964,24 +1964,40 @@ img {
 
     .footer-credentials {
         text-align: center;
-        padding: 20px;
+        padding: 15px;
         width: 100%;
     }
 
     .footer-credentials-content {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 10px;
+    }
+
+    .footer-credentials-left p {
+        font-size: 12px; /* Smaller copyright text */
+        margin: 0;
     }
 
     .footer-credentials-right {
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 5px;
+    }
+
+    .footer-credentials-right p {
+        font-size: 11px; /* Smaller credits text */
+        margin: 0;
     }
 
     .footer-credentials-logo {
-        width: 150px;
+        width: 120px; /* Smaller logo */
         height: auto;
+        margin-top: 5px;
+    }
+
+    .footer-credentials-line {
+        margin: 10px 0;
     }
 }
