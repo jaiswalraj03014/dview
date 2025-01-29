@@ -94,9 +94,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileNav = document.getElementById('mobileNav');
 
+    // Only add mobile navigation listeners if elements exist
     if (hamburgerBtn && mobileNav) {
         hamburgerBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
+            if (e && e.stopPropagation) e.stopPropagation();
             this.classList.toggle('active');
             mobileNav.classList.toggle('active');
         });
@@ -105,36 +106,56 @@ document.addEventListener('DOMContentLoaded', function() {
     // Services Dropdown
     const servicesLink = document.querySelector('.services-link');
     const servicesDropdown = document.getElementById('servicesDropdown');
+    const servicesArrow = servicesLink ? servicesLink.querySelector('i') : null;
 
+    // Only add services dropdown listeners if elements exist
     if (servicesLink && servicesDropdown) {
         servicesLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
+            if (e && e.preventDefault) e.preventDefault();
+            if (e && e.stopPropagation) e.stopPropagation();
+            
             servicesDropdown.classList.toggle('show');
             this.classList.toggle('active');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!servicesLink.contains(e.target) && !servicesDropdown.contains(e.target)) {
-                servicesDropdown.classList.remove('show');
-                servicesLink.classList.remove('active');
+            
+            // Toggle arrow if it exists
+            if (servicesArrow) {
+                servicesArrow.classList.toggle('fa-chevron-up');
+                servicesArrow.classList.toggle('fa-chevron-down');
             }
-        });
-
-        // Prevent dropdown from closing when clicking inside it
-        servicesDropdown.addEventListener('click', function(e) {
-            e.stopPropagation();
         });
     }
 
-    // Close mobile nav when clicking outside
+    // Global click handler
     document.addEventListener('click', function(e) {
-        if (mobileNav && hamburgerBtn && !hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+        // Close mobile nav when clicking outside
+        if (mobileNav && hamburgerBtn && 
+            !hamburgerBtn.contains(e.target) && 
+            !mobileNav.contains(e.target)) {
             mobileNav.classList.remove('active');
             hamburgerBtn.classList.remove('active');
         }
+
+        // Close services dropdown when clicking outside
+        if (servicesDropdown && servicesLink && 
+            !servicesLink.contains(e.target) && 
+            !servicesDropdown.contains(e.target)) {
+            servicesDropdown.classList.remove('show');
+            servicesLink.classList.remove('active');
+            
+            // Reset arrow if it exists
+            if (servicesArrow) {
+                servicesArrow.classList.remove('fa-chevron-up');
+                servicesArrow.classList.add('fa-chevron-down');
+            }
+        }
     });
+
+    // Prevent dropdown from closing when clicking inside
+    if (servicesDropdown) {
+        servicesDropdown.addEventListener('click', function(e) {
+            if (e && e.stopPropagation) e.stopPropagation();
+        });
+    }
 });
 
 function toggleSidenav() {
