@@ -90,29 +90,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Get elements
     const hamburger = document.querySelector('.hamburger-menu');
     const sidenav = document.querySelector('.sidenav');
-    const closeBtn = document.querySelector('.close-btn');
-    const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
-    const mainContent = document.querySelector('.advertisement-container');
+    
+    if (!hamburger || !sidenav) {
+        console.error('Required elements not found');
+        return;
+    }
 
-    // Toggle sidenav when hamburger is clicked
-    hamburger.addEventListener('click', function(e) {
-        e.stopPropagation(); // Prevent event bubbling
+    // Toggle sidenav
+    function toggleSidenav(e) {
+        e.stopPropagation();
         sidenav.classList.toggle('active');
         hamburger.classList.toggle('active');
-    });
+    }
+
+    // Add click event to hamburger
+    hamburger.addEventListener('click', toggleSidenav);
 
     // Close sidenav when clicking outside
     document.addEventListener('click', function(e) {
-        if (!sidenav.contains(e.target) && !hamburger.contains(e.target)) {
+        if (sidenav.classList.contains('active') && 
+            !sidenav.contains(e.target) && 
+            !hamburger.contains(e.target)) {
             sidenav.classList.remove('active');
             hamburger.classList.remove('active');
         }
     });
 
-    // Prevent clicks inside sidenav from closing it
+    // Prevent sidenav clicks from closing
     sidenav.addEventListener('click', function(e) {
         e.stopPropagation();
     });
