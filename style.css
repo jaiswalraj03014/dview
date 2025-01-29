@@ -207,7 +207,7 @@ body {
         height: 100%;
         width: auto;
         display: block !important;
-        width: 50px;
+        width: 100%;
     }
 
     /* Hide desktop elements */
