@@ -1913,17 +1913,17 @@ img {
         align-items: center;
     }
 
+    .footer-logo {
+        width: 200px;
+        height: auto;
+        margin: 0 auto 20px; /* Center horizontally with auto margins */
+        display: block; /* Ensure block display */
+    }
+
     .footer-left p {
         text-align: center;
         max-width: 300px;
         margin: 0 auto;
-    }
-
-    .footer-logo {
-        width: 100px;
-        height: auto;
-        margin-bottom: 20px;
-        align-items: center;
     }
 
     .footer-right {
@@ -1984,7 +1984,12 @@ img {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 5px;
+        width: 100%; /* Full width to ensure center alignment */
+    }
+
+    .footer-credentials-right img {
+        margin: 0 auto; /* Center the image */
+        display: block; /* Ensure block display */
     }
 
     .footer-credentials-right p {
@@ -1993,9 +1998,10 @@ img {
     }
 
     .footer-credentials-logo {
-        width: 120px; /* Smaller logo */
+        width: 120px;
         height: auto;
-        margin-top: 5px;
+        margin: 5px auto; /* Center horizontally */
+        display: block; /* Ensure block display */
     }
 
     .footer-credentials-line {
