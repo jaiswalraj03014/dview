@@ -106,11 +106,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 50px; /* Increased padding */
 }
 
 .logo {
     height: 50px;
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
@@ -127,13 +129,15 @@ body {
 .menu.desktop-menu ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 30px; /* Increased gap */
+    margin: 0;
+    padding: 0;
 }
 
 .menu.desktop-menu ul li a {
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     padding: 6px 10px;
     line-height: 80px;
     transition: all 0.3s ease;
@@ -1800,4 +1804,72 @@ img {
     #servicesDropdown {
         display: none !important;
     }
+}
+
+/* Services dropdown styles */
+.services-dropdown {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.services-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px;
+}
+
+.dropdown-column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.dropdown-column h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dropdown-column a {
+    display: block;
+    color: #666;
+    padding: 8px 0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.dropdown-column a:hover {
+    color: #333;
+    padding-left: 5px;
+}
+
+/* Services link active state */
+.services-link.active {
+    color: #fff;
+}
+
+/* Chevron animation */
+.services-link i {
+    transition: transform 0.3s ease;
+}
+
+.services-link.active i {
+    transform: rotate(180deg);
 }
