@@ -111,7 +111,7 @@ body {
 
 /* Logo styles */
 .logo {
-    height: 120px;
+    height: 50px;
     margin-right: auto; /* Push logo to the left */
 }
 
@@ -200,7 +200,7 @@ body {
     }
 
     .logo {
-        height: 70px;
+        height: 40px;
         display: block !important;
     }
 
@@ -1745,6 +1745,7 @@ img {
     }
 
     .hamburger-btn {
+        display: block; /* Show only in mobile */
         position: absolute;
         left: 15px;
         top: 50%;
@@ -1754,7 +1755,6 @@ img {
         cursor: pointer;
         z-index: 1001;
         padding: 10px;
-        display: block;
     }
 
     .hamburger-btn span {
@@ -1878,4 +1878,9 @@ img {
 
 .services-link.active i {
     transform: rotate(180deg);
+}
+
+/* Hide hamburger in desktop */
+.hamburger-btn {
+    display: none; /* Hide by default */
 }
