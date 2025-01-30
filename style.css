@@ -236,8 +236,17 @@ body {
     }
 
     /* Advertisement widgets */
+    .advertisement-container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 30px;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Large Ad Widget */
     .ad-widget-large {
-        width: 98%; /* Increased width */
+        width: 98%;
         margin: 0 auto 15px;
         display: flex;
         flex-direction: column;
@@ -246,30 +255,31 @@ body {
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         min-height: 580px;
-        background-size: cover;
+        position: relative;
+        background-size: 100% 100%; /* Full coverage */
         background-position: center;
         background-repeat: no-repeat;
-        position: relative;
     }
 
     .left-widget {
         width: 100%;
-        height: 280px; /* Reduced height */
+        height: 280px;
         position: relative;
         margin-bottom: 0;
+        overflow: hidden; /* Ensure image doesn't overflow */
     }
 
     .left-widget img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Changed to cover */
+        object-fit: cover;
+        object-position: center;
         display: block;
-        background: transparent;
     }
 
     .right-widget {
         width: 100%;
-        padding: 10px 15px; /* Reduced top padding */
+        padding: 10px 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -277,46 +287,9 @@ body {
         background: rgba(255, 255, 255, 0.9);
     }
 
-    .ad-heading {
-        font-size: 28px;
-        margin: 5px 0; /* Reduced margin */
-        line-height: 1.2;
-    }
-
-    .ad-subheading {
-        font-size: 36px;
-        margin: 5px 0;
-        line-height: 1.2;
-    }
-
-    .ad-desp {
-        font-size: 15px;
-        line-height: 1.5;
-        margin: 8px 0; /* Reduced margin */
-        padding: 0 10px;
-        max-width: 95%;
-    }
-
-    .ad-button {
-        margin: 12px 0; /* Reduced margin */
-        padding: 12px 35px;
-        font-size: 16px;
-        width: auto;
-        display: inline-block;
-        position: relative;
-        z-index: 1;
-        background: #000;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        text-decoration: none;
-        text-align: center;
-    }
-
     /* Small Ad Widget */
     .ad-widget-small {
-        width: 98%; /* Increased width */
+        width: 98%;
         margin: 0 auto 15px;
         padding: 30px;
         text-align: center;
@@ -336,6 +309,54 @@ body {
         display: block;
     }
 
+    /* Medium Ad Widget */
+    .ad-widget-medium {
+        width: 98%;
+        margin: 0 auto 15px;
+        padding: 30px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Text and button styles */
+    .ad-heading {
+        font-size: 28px;
+        margin: 5px 0;
+        line-height: 1.2;
+    }
+
+    .ad-subheading {
+        font-size: 36px;
+        margin: 5px 0;
+        line-height: 1.2;
+    }
+
+    .ad-desp {
+        font-size: 15px;
+        line-height: 1.5;
+        margin: 8px 0;
+        padding: 0 10px;
+        max-width: 95%;
+    }
+
+    .ad-button {
+        margin: 12px 0;
+        padding: 12px 35px;
+        font-size: 16px;
+        width: auto;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        background: #000;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+    }
+
     /* Feedback Widget */
     .feedback-widget-large {
         width: 90%;
@@ -347,59 +368,19 @@ body {
         background: #fff;
     }
 
-    .feedback-widget-header {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin: 0 5px;
-    }
-
-    .dot.red { background-color: #ff5f57; }
-    .dot.yellow { background-color: #ffbd2e; }
-    .dot.green { background-color: #28ca41; }
-
-    .feedback-text {
-        text-align: center;
-        font-size: 16px;
-        line-height: 1.6;
-        margin: 25px 0;
-        padding: 0 15px;
-    }
-
+    /* Common margins and padding */
+    .ad-heading,
+    .ad-subheading,
+    .ad-desp,
+    .ad-button,
+    .feedback-text,
     .feedback-provider {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
     }
 
-    .provider-image {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        overflow: hidden;
-    }
-
-    .provider-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .feedback-provider p {
-        font-size: 14px;
-        font-weight: 500;
-        margin: 0;
-    }
-
-    /* Hide multiple feedback widgets */
+    /* Hide extra feedback widgets */
     .feedback-widget-medium,
     .feedback-widget-small {
         display: none;
@@ -1809,7 +1790,7 @@ footer {
 
     /* Large Ad Widget */
     .ad-widget-large {
-        width: 98%; /* Increased width */
+        width: 98%;
         margin: 0 auto 15px;
         display: flex;
         flex-direction: column;
@@ -1818,30 +1799,31 @@ footer {
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         min-height: 580px;
-        background-size: cover;
+        position: relative;
+        background-size: 100% 100%; /* Full coverage */
         background-position: center;
         background-repeat: no-repeat;
-        position: relative;
     }
 
     .left-widget {
         width: 100%;
-        height: 280px; /* Reduced height */
+        height: 280px;
         position: relative;
         margin-bottom: 0;
+        overflow: hidden; /* Ensure image doesn't overflow */
     }
 
     .left-widget img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Changed to cover */
+        object-fit: cover;
+        object-position: center;
         display: block;
-        background: transparent;
     }
 
     .right-widget {
         width: 100%;
-        padding: 10px 15px; /* Reduced top padding */
+        padding: 10px 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1849,9 +1831,42 @@ footer {
         background: rgba(255, 255, 255, 0.9);
     }
 
+    /* Small Ad Widget */
+    .ad-widget-small {
+        width: 98%;
+        margin: 0 auto 15px;
+        padding: 30px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .small-image {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto 20px;
+    }
+
+    .small-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Medium Ad Widget */
+    .ad-widget-medium {
+        width: 98%;
+        margin: 0 auto 15px;
+        padding: 30px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Text and button styles */
     .ad-heading {
         font-size: 28px;
-        margin: 5px 0; /* Reduced margin */
+        margin: 5px 0;
         line-height: 1.2;
     }
 
@@ -1864,13 +1879,13 @@ footer {
     .ad-desp {
         font-size: 15px;
         line-height: 1.5;
-        margin: 8px 0; /* Reduced margin */
+        margin: 8px 0;
         padding: 0 10px;
         max-width: 95%;
     }
 
     .ad-button {
-        margin: 12px 0; /* Reduced margin */
+        margin: 12px 0;
         padding: 12px 35px;
         font-size: 16px;
         width: auto;
@@ -1884,22 +1899,6 @@ footer {
         cursor: pointer;
         text-decoration: none;
         text-align: center;
-    }
-
-    /* Small Ad Widget */
-    .ad-widget-small {
-        width: 98%; /* Increased width */
-        margin: 0 auto 15px;
-        padding: 30px;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    /* Medium Ad Widget */
-    .ad-widget-medium {
-        width: 98%; /* Increased width */
-        margin: 0 auto 15px;
     }
 
     /* Feedback Widget */
