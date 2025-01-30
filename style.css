@@ -237,15 +237,15 @@ body {
 
     /* Advertisement widgets */
     .ad-widget-large {
-        width: 95%;
-        margin: 0 auto 20px;
+        width: 98%; /* Increased width */
+        margin: 0 auto 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        min-height: 600px;
+        min-height: 580px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -254,7 +254,7 @@ body {
 
     .left-widget {
         width: 100%;
-        height: 300px;
+        height: 280px; /* Reduced height */
         position: relative;
         margin-bottom: 0;
     }
@@ -262,14 +262,14 @@ body {
     .left-widget img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover; /* Changed to cover */
         display: block;
         background: transparent;
     }
 
     .right-widget {
         width: 100%;
-        padding: 15px;
+        padding: 10px 15px; /* Reduced top padding */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -279,7 +279,7 @@ body {
 
     .ad-heading {
         font-size: 28px;
-        margin: 10px 0 5px 0;
+        margin: 5px 0; /* Reduced margin */
         line-height: 1.2;
     }
 
@@ -292,13 +292,13 @@ body {
     .ad-desp {
         font-size: 15px;
         line-height: 1.5;
-        margin: 10px 0;
+        margin: 8px 0; /* Reduced margin */
         padding: 0 10px;
         max-width: 95%;
     }
 
     .ad-button {
-        margin: 15px 0;
+        margin: 12px 0; /* Reduced margin */
         padding: 12px 35px;
         font-size: 16px;
         width: auto;
@@ -316,8 +316,8 @@ body {
 
     /* Small Ad Widget */
     .ad-widget-small {
-        width: 100%;
-        margin: 0 auto 30px;
+        width: 98%; /* Increased width */
+        margin: 0 auto 15px;
         padding: 30px;
         text-align: center;
         border-radius: 10px;
@@ -1796,7 +1796,7 @@ footer {
 
     .advertisement-container {
         flex-direction: column;
-        padding: 15px;
+        padding: 10px;
         gap: 30px;
         align-items: center; /* Center all items */
         width: 100%;
@@ -1809,15 +1809,15 @@ footer {
 
     /* Large Ad Widget */
     .ad-widget-large {
-        width: 95%;
-        margin: 0 auto 20px;
+        width: 98%; /* Increased width */
+        margin: 0 auto 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        min-height: 600px;
+        min-height: 580px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -1826,7 +1826,7 @@ footer {
 
     .left-widget {
         width: 100%;
-        height: 300px;
+        height: 280px; /* Reduced height */
         position: relative;
         margin-bottom: 0;
     }
@@ -1834,14 +1834,14 @@ footer {
     .left-widget img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover; /* Changed to cover */
         display: block;
         background: transparent;
     }
 
     .right-widget {
         width: 100%;
-        padding: 15px;
+        padding: 10px 15px; /* Reduced top padding */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1851,7 +1851,7 @@ footer {
 
     .ad-heading {
         font-size: 28px;
-        margin: 10px 0 5px 0;
+        margin: 5px 0; /* Reduced margin */
         line-height: 1.2;
     }
 
@@ -1864,13 +1864,13 @@ footer {
     .ad-desp {
         font-size: 15px;
         line-height: 1.5;
-        margin: 10px 0;
+        margin: 8px 0; /* Reduced margin */
         padding: 0 10px;
         max-width: 95%;
     }
 
     .ad-button {
-        margin: 15px 0;
+        margin: 12px 0; /* Reduced margin */
         padding: 12px 35px;
         font-size: 16px;
         width: auto;
@@ -1888,8 +1888,8 @@ footer {
 
     /* Small Ad Widget */
     .ad-widget-small {
-        width: 100%;
-        margin: 0 auto 30px;
+        width: 98%; /* Increased width */
+        margin: 0 auto 15px;
         padding: 30px;
         text-align: center;
         border-radius: 10px;
@@ -1898,12 +1898,8 @@ footer {
 
     /* Medium Ad Widget */
     .ad-widget-medium {
-        width: 90%;
-        margin: 0 auto 30px;
-        padding: 30px;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 98%; /* Increased width */
+        margin: 0 auto 15px;
     }
 
     /* Feedback Widget */
