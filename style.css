@@ -1288,7 +1288,7 @@ body {
 
 /* Large Widget */
 .ad-widget-large {
-    background-color: #e8f4f8;
+    background-color: #999;
     border-radius: 30px;
     display: flex;
     justify-content: center;
