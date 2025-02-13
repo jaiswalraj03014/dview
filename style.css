@@ -117,8 +117,8 @@ body {
 }
 
 .logo img {
-    max-height: 80px; /* Set a maximum height for the logo */
-    width: auto; /* Maintain aspect ratio */
+    height: 100%;
+    width: auto;
 }
 
 /* Desktop Menu */
@@ -2261,19 +2261,15 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center items horizontally */
-    justify-content: flex-start; /* Align items to the top */
-    height: 100vh; /* Full height of the viewport */
-    padding-top: 20px; /* Add padding to the top for spacing */
 }
 
 .mobile-logo-container {
     display: flex;
     align-items: center; /* Center logo vertically */
     justify-content: center; /* Center logo horizontally */
-    margin-bottom: 20px; /* Add space below the logo */
+    height: 100px; /* Adjust height as needed */
 }
 
 .mobile-logo {
-    max-height: 80px; /* Set a maximum height for the logo */
-    width: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure the logo fits within the container */
 }
