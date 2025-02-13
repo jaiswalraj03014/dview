@@ -106,7 +106,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 15px; /* Increased padding */
+    padding: 0 50px; /* Increased padding */
 }
 
 .logo {
@@ -117,8 +117,8 @@ body {
 }
 
 .logo img {
-    max-height: 80px; /* Set a maximum height for the logo */
-    width: auto; /* Maintain aspect ratio */
+    height: 100%;
+    width: auto;
 }
 
 /* Desktop Menu */
@@ -2254,26 +2254,4 @@ img {
         margin: 10px auto; /* Increased vertical margin */
         display: block;
     }
-}
-
-/* Mobile Navigation Styles */
-.mobile-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    height: 100vh; /* Full height of the viewport */
-    padding-top: 20px; /* Add padding to the top for spacing */
-}
-
-.mobile-logo-container {
-    display: flex;
-    align-items: center; /* Center logo vertically */
-    justify-content: center; /* Center logo horizontally */
-    height: 100px; /* Set a fixed height for the logo container */
-    margin-bottom: 20px; /* Add space below the logo */
-}
-
-.mobile-logo {
-    max-height: 100%; /* Ensure the logo fits within the container */
 }
