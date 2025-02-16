@@ -135,4 +135,104 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-  
+    // Hamburger button and mobile nav logic
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const body = document.body;
+
+    if (hamburgerBtn && mobileNav) {
+        hamburgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            body.classList.toggle('nav-open');
+        });
+
+        // Close nav when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                hamburgerBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
+                body.classList.remove('nav-open');
+            }
+        });
+
+        // Prevent nav closing when clicking inside
+        mobileNav.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+
+    // Services Dropdown for mobile
+    const servicesButtonMobile = document.querySelector('.services-link');
+    const servicesDropdownMobile = document.getElementById('servicesDropdown');
+    const servicesArrowMobile = servicesButtonMobile ? servicesButtonMobile.querySelector('i') : null;
+
+    // Only add services dropdown listeners if elements exist
+    if (servicesButtonMobile && servicesDropdownMobile) {
+        servicesButtonMobile.addEventListener('click', function(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            if (e && e.stopPropagation) e.stopPropagation();
+            
+            servicesDropdownMobile.classList.toggle('show');
+            this.classList.toggle('active');
+            
+            // Toggle arrow if it exists
+            if (servicesArrowMobile) {
+                servicesArrowMobile.classList.toggle('fa-chevron-up');
+                servicesArrowMobile.classList.toggle('fa-chevron-down');
+            }
+        });
+    }
+
+    // Global click handler
+    document.addEventListener('click', function(e) {
+        // Close mobile nav when clicking outside
+        if (mobileNav && hamburgerBtn && 
+            !hamburgerBtn.contains(e.target) && 
+            !mobileNav.contains(e.target)) {
+            mobileNav.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
+        }
+
+        // Close services dropdown when clicking outside
+        if (servicesDropdownMobile && servicesButtonMobile && 
+            !servicesButtonMobile.contains(e.target) && 
+            !servicesDropdownMobile.contains(e.target)) {
+            servicesDropdownMobile.classList.remove('show');
+            servicesButtonMobile.classList.remove('active');
+            
+            // Reset arrow if it exists
+            if (servicesArrowMobile) {
+                servicesArrowMobile.classList.remove('fa-chevron-up');
+                servicesArrowMobile.classList.add('fa-chevron-down');
+            }
+        }
+    });
+
+    // Prevent dropdown from closing when clicking inside
+    if (servicesDropdownMobile) {
+        servicesDropdownMobile.addEventListener('click', function(e) {
+            if (e && e.stopPropagation) e.stopPropagation();
+        });
+    }
+
+    // Sidenav functionality
+    const sidenav = document.querySelector('.sidenav');
+    const sidenavButton = document.querySelector('.hamburger-menu');
+
+    if (sidenavButton) {
+        sidenavButton.addEventListener('click', function() {
+            sidenav.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Close sidenav when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!sidenav.contains(event.target) && !sidenavButton.contains(event.target) && sidenav.classList.contains('active')) {
+                sidenav.classList.remove('active');
+                sidenavButton.classList.remove('active');
+            }
+        });
+    }
+});
