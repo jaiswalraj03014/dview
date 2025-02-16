@@ -89,21 +89,29 @@ body, html, ul {
 }
 /* Navbar */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #333;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 15px;
-    background-color: #333;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    height: 80px;
+    padding: 0 50px; /* Increased padding */
+}
+
+.logo {
+    position: absolute;
+    left: 30px;
+    height: 120px;
+    z-index: 1002;
 }
 
 .logo img {
-    height: 120px;
-    max-height: 100%;
+    height: 100%;
+    width: auto;
 }
 
 /* Menu Section */
@@ -371,4 +379,85 @@ body, html, ul {
     .info-container {
         text-align: center;
     }
+}
+
+/* Mobile Styles */
+.hamburger-btn {
+    display: none; /* Initially hidden */
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 60px;
+    left: -250px;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background-color: #333;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    left: 0;
+}
+
+.mobile-nav nav {
+    padding: 20px 0;
+}
+
+.mobile-nav a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.mobile-nav a:hover {
+    background-color: #444;
+}
+
+/* Show hamburger button on mobile */
+@media screen and (max-width: 768px) {
+    .hamburger-btn {
+        display: block; /* Show hamburger button */
+    }
+
+    .menu.desktop-menu {
+        display: none !important; /* Hide desktop menu */
+    }
+}
+
+/* Sidenav styles */
+.sidenav {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 60px;
+    left: -250px; /* Start off-screen */
+    background-color: #333;
+    overflow-x: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 999;
+    padding-top: 20px;
+}
+
+.sidenav.active {
+    left: 0; /* Slide in */
+    width: 250px;
+}
+
+.sidenav a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
 }
