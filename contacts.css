@@ -1,0 +1,374 @@
+body, html, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #ffe8cf;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'BauerBodoniItalic';
+    src: url('fonts/BauerBodoniItalic.otf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'seasons';
+    src: url('fonts/the-seasons.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'league';
+    src: url('/Users/aakashjaiswal/Desktop/Raj_Snacks_Parlour/League_Spartan/league_1.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'mont';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'mont-reg';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'sans';
+    src: url('/Users/aakashjaiswal/Desktop/dview/OnlineWebFonts_COM_8037294ec54f4d066547cb198610d8e1/Sans/Sans.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'lastica';
+    src: url('/Users/aakashjaiswal/Desktop/dview/fonts/fonnts.com-Lastica.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'FAIR';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/playfair-display/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'FAIR-b';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/playfair-display/PlayfairDisplay-Bold.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'itc';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/itc bauhaus/BauhausStd-Medium.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'itc-reg';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/itc bauhaus/BauhausStd-Light.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'FAIR-b';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/playfair-display/PlayfairDisplay-Bold.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'amb';
+    src: url('/Users/aakashjaiswal/Desktop/FONTS/ambiguity/FontsFree-Net-Ambiguity4.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+}
+
+.logo img {
+    height: 120px;
+    max-height: 100%;
+}
+
+/* Menu Section */
+.menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 6px 10px;
+    line-height: 70px;
+    transition: all 0.3s ease;
+    font-family: 'seasons', serif;
+    font-weight: 500;
+}
+
+.menu ul li a.active {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+.menu ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Dropdown Section */
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+}
+
+/* Logo */
+.logo img {
+    height: 120px;
+    max-height: 100%;
+}
+
+/* Menu */
+.menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 6px 10px;
+    line-height: 70px;
+    transition: all 0.3s ease;
+    font-family: 'seasons', serif;
+    font-weight: 500;
+}
+
+.menu ul li a.active {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+.menu ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    display:flex;
+    position: absolute;
+    top: 8%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.dropdown.show {
+    max-height: 500px;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+}
+
+.dropdown.closing {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Dropdown Columns */
+.dropdown .dropdown-column {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin: 10px;
+}
+
+.dropdown.show .dropdown-column {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dropdown Links */
+.dropdown .dropdown-column h3 {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    color: #707e5a;
+    font-family: sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.dropdown .dropdown-column a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown .dropdown-column a:hover {
+    background-color: #ffe8cf;
+    transform: scale(1.05);
+    border-radius: 5px;
+}
+
+/* Right Section */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.right-section .fas.fa-search {
+    cursor: pointer;
+    font-size: 20px;
+    color: white; /* White icon */
+    padding: 10px;
+    border-radius: 50%; /* Circular button */
+    transition: background-color 0.3s ease;
+}
+
+.right-section .fas.fa-search:hover {
+    background-color: #555; /* Darker blue on hover */
+}
+
+.right-section i {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.right-section i:hover {
+    color: #ff6f61;
+}
+.entire-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80%;
+    margin: 10% auto;
+    min-height: 200px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Map Container */
+.map-container {
+    flex: 0 0 60%; /* Map takes 60% of the container's width */
+    max-width: 60%; /* Ensure it doesn't exceed 60% */
+    max-height: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Info Container */
+.info-container {
+    flex: 1; /* Text container takes the remaining 40% */
+    max-width: 40%;
+    padding: 20px;
+    text-align: left;
+}
+
+.info-container h2 {
+    font-size: 1.8rem;
+    color: #0078d4;
+    margin-bottom: 10px;
+}
+
+.info-container p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .entire-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .map-container,
+    .info-container {
+        max-width: 100%;
+    }
+
+    .info-container {
+        text-align: center;
+    }
+}
