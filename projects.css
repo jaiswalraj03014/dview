@@ -199,13 +199,15 @@ body {
         z-index: 1000;
     }
 
-  .mobile-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 10px 0;
-}
+ .mobile-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
 
 .mobile-logo img {
     width: 120px; /* Adjust as needed */
