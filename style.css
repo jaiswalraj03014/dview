@@ -180,7 +180,7 @@ body {
     }
 
     /* Navbar mobile */
-    .navbar {
+   .navbar {
         height: 60px;
         padding: 0 15px;
         position: fixed;
@@ -195,15 +195,19 @@ body {
     }
 
     .logo {
+        position: absolute;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
-        padding-top: 80px;
-        
+        transform: translate(-50%, -50%);
+        height: 60px; /* Adjust as needed */
+        padding-top: 0; /* Remove extra padding */
     }
 
     .logo img {
-        height: 70px;
+        height: 100%;
+        width: auto;
     }
+}
 
     /* Hide desktop elements */
     .menu.desktop-menu,
