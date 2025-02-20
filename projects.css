@@ -199,9 +199,12 @@ body {
         z-index: 1000;
     }
 
-   .mobile-logo {
-    text-align: center;
-    padding: 10px;
+  .mobile-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
 }
 
 .mobile-logo img {
