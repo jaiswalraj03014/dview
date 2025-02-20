@@ -181,10 +181,10 @@ body {
         width: 100%;
         overflow-x: hidden;
         -webkit-text-size-adjust: 100%;
-        background-color: #ffe8cf; !important;
+        background-color: #ffe8cf !important;
     }
     body{
-         background: #ffe8cf;
+         background: #ffe8cf !important;
     }
     /* Navbar mobile */
       .navbar {
