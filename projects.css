@@ -199,16 +199,15 @@ body {
         z-index: 1000;
     }
 
-    .logo {
-        left: 50%;
-        transform: translateX(-50%);
-        margin-top: 40px;
-    }
+   .mobile-logo {
+    text-align: center;
+    padding: 10px;
+}
 
-    .logo img {
-        height: 70px;
-    }
-
+.mobile-logo img {
+    width: 120px; /* Adjust as needed */
+    height: auto;
+}
     /* Hide desktop elements */
     .menu.desktop-menu,
     .right-section.desktop-only,
