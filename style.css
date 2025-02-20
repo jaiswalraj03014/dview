@@ -199,11 +199,10 @@ body {
     transform: translateX(-50%);
     margin-top: 40px;
 }
-
-    .logo img {
-        height: 100%;
-        width: auto;
-    }
+.logo img {
+    height: 50px; /* Adjust to fit inside the 60px navbar */
+    width: auto;
+}
 }
 
     /* Hide desktop elements */
