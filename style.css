@@ -184,29 +184,35 @@ body {
     }
 
     /* Navbar mobile */
-    .navbar {
-        height: 60px;
+      .navbar {
+        height: 60px; /* Adjusted navbar height */
         padding: 0 15px;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between; /* Adjusted alignment */
         align-items: center;
         background: #333;
         z-index: 1000;
     }
 
     .logo {
+        position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%; /* Ensures it takes up the full navbar height */
     }
 
     .logo img {
-        height: 70px;
+        height: 50px; /* Reduced size to fit within navbar */
+        max-width: 100%;
+        object-fit: contain; /* Ensures it doesn't overflow */
     }
-
     /* Hide desktop elements */
     .menu.desktop-menu,
     .right-section.desktop-only,
@@ -448,7 +454,7 @@ body {
     }
 
     /* Hamburger menu */
-    .hamburger-menu {
+   .hamburger-menu {
         display: block;
         position: absolute;
         left: 15px;
