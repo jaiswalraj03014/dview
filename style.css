@@ -183,7 +183,9 @@ body {
         -webkit-text-size-adjust: 100%;
         background-color: #ffe8cf;
     }
-
+    body{
+         background: #ffe8cf;
+    }
     /* Navbar mobile */
       .navbar {
         height: 60px; /* Adjusted navbar height */
