@@ -195,13 +195,10 @@ body {
     }
 
     .logo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 60px; /* Adjust as needed */
-        padding-top: 0; /* Remove extra padding */
-    }
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 40px;
+}
 
     .logo img {
         height: 100%;
